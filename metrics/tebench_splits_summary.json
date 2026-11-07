@@ -1,0 +1,318 @@
+{
+  "status": "PROPOSED split keys (not an official benchmark release; no models trained)",
+  "seed": 20261107,
+  "paper_bucket_fractions_train_val_test": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "generated_Asia_Calcutta": "2026-11-07T14:28:30.496233+05:30",
+  "grouping_method": "seeded sha256 hash of normalized DOI (or formula key for JARVIS); fractions are by group count, so record fractions vary",
+  "doi_normalization": "trim + lowercase + remove https://(dx.)doi.org/ or doi: prefix",
+  "composition_matching": "whitespace-stripped string equality only; no chemical parsing, element-order or stoichiometry normalization",
+  "schemes": {
+    "bi2te3_bulk_audited:split__own_holdout_default": {
+      "records": {
+        "excluded_ml_include_0": 25,
+        "own_paper_holdout": 34,
+        "train_pool": 681
+      },
+      "papers": {
+        "excluded_ml_include_0": 7,
+        "own_paper_holdout": 8,
+        "train_pool": 141
+      }
+    },
+    "bi2te3_bulk_audited:split__paper_random_70_15_15": {
+      "records": {
+        "excluded_ml_include_0": 25,
+        "own_paper_holdout": 34,
+        "test": 132,
+        "train": 486,
+        "val": 63
+      },
+      "papers": {
+        "excluded_ml_include_0": 7,
+        "own_paper_holdout": 8,
+        "test": 23,
+        "train": 104,
+        "val": 14
+      }
+    },
+    "starrydata_experiment:split__paper_random_70_15_15": {
+      "samples": {
+        "own_paper_holdout": 6,
+        "test": 4557,
+        "train": 21536,
+        "val": 4431
+      },
+      "points": {
+        "own_paper_holdout": 148,
+        "test": 240421,
+        "train": 1162952,
+        "val": 244794
+      },
+      "papers": {
+        "own_paper_holdout": 2,
+        "test": 888,
+        "train": 4245,
+        "val": 910
+      }
+    },
+    "starrydata_experiment:split__leave_Bi2Te3_family_out": {
+      "samples": {
+        "excluded_no_family_label": 10936,
+        "own_paper_holdout": 6,
+        "test": 1725,
+        "train": 17863
+      },
+      "points": {
+        "excluded_no_family_label": 600132,
+        "own_paper_holdout": 148,
+        "test": 73314,
+        "train": 974721
+      },
+      "papers": {
+        "excluded_no_family_label": 2269,
+        "own_paper_holdout": 2,
+        "test": 408,
+        "train": 3626
+      }
+    },
+    "starrydata_experiment:split__family_fold_5": {
+      "samples": {
+        "excluded_no_family_label": 10936,
+        "fold_0": 3764,
+        "fold_1": 1208,
+        "fold_2": 3384,
+        "fold_3": 6234,
+        "fold_4": 4998,
+        "own_paper_holdout": 6
+      },
+      "points": {
+        "excluded_no_family_label": 600132,
+        "fold_0": 184053,
+        "fold_1": 65157,
+        "fold_2": 195645,
+        "fold_3": 293388,
+        "fold_4": 309792,
+        "own_paper_holdout": 148
+      },
+      "papers": {
+        "excluded_no_family_label": 2269,
+        "fold_0": 834,
+        "fold_1": 276,
+        "fold_2": 602,
+        "fold_3": 1360,
+        "fold_4": 1088,
+        "own_paper_holdout": 2
+      }
+    },
+    "jarvis_dft:split__formula_random_70_15_15": {
+      "materials": {
+        "excluded_no_formula": 1,
+        "test": 3415,
+        "train": 16409,
+        "val": 3733
+      },
+      "formula_groups": {
+        "excluded_no_formula": 1,
+        "test": 2730,
+        "train": 12918,
+        "val": 2826
+      }
+    },
+    "jarvis_dft:split__leave_contains_Bi_and_Te_out": {
+      "materials": {
+        "test": 34,
+        "train": 23524
+      },
+      "formula_groups": {
+        "test": 34,
+        "train": 18441
+      }
+    },
+    "jarvis_dft:split__leave_BiSbTeSe_only_out": {
+      "materials": {
+        "test": 52,
+        "train": 23506
+      },
+      "formula_groups": {
+        "test": 18,
+        "train": 18457
+      }
+    }
+  },
+  "files": [
+    "tebench_split_bi2te3_bulk_audited.csv.gz",
+    "tebench_split_starrydata_experiment.csv.gz",
+    "tebench_split_jarvis_dft.csv.gz",
+    "tebench_cross_source_leakage_flags.csv.gz"
+  ],
+  "own_paper_dois_forced_out_of_train_and_val": [
+    "10.1007/s00339-022-05662-2",
+    "10.1016/j.jallcom.2020.157828",
+    "10.1016/j.jallcom.2021.158621",
+    "10.1016/j.jallcom.2022.163767",
+    "10.1021/acsaenm.3c00649",
+    "10.1039/d1ra04886d",
+    "10.1088/1361-6463/abeb3e",
+    "10.1088/2053-1591/ace30b"
+  ],
+  "user_confirmed_own_dois": [
+    "10.1016/j.jallcom.2020.157828",
+    "10.1016/j.jallcom.2021.158621"
+  ],
+  "user_confirmed_dois_present_in_workbook_own_rows": [
+    "10.1016/j.jallcom.2020.157828",
+    "10.1016/j.jallcom.2021.158621"
+  ],
+  "own_rows_with_blank_doi": 0,
+  "literature_rows_on_own_dois": 4,
+  "bi2te3_records_on_user_confirmed_dois": {
+    "10.1016/j.jallcom.2020.157828": 2,
+    "10.1016/j.jallcom.2021.158621": 4
+  },
+  "starrydata_samples_with_more_than_one_doi": 0,
+  "starrydata_family_fold_members": {
+    "fold_0": [
+      "Alloy",
+      "Borom",
+      "Chalcogenide",
+      "Germinide",
+      "Graphene",
+      "Graphite Intercalation Compounds",
+      "Iron pnictides",
+      "Metal",
+      "Oxide",
+      "Polymer",
+      "Tl4TiS4"
+    ],
+    "fold_1": [
+      "Chevrel phase",
+      "Selenide",
+      "Si/Ge",
+      "Zintl",
+      "diamondlike structure"
+    ],
+    "fold_2": [
+      "Germanide",
+      "Organic",
+      "PbTe",
+      "Phosphide",
+      "Ruthenates",
+      "Sb2Te3(GeTe)17",
+      "SiGe",
+      "Silicide",
+      "Skutterudite",
+      "SnSe"
+    ],
+    "fold_3": [
+      "Aluminide",
+      "Argyrodite",
+      "Bi2Te3",
+      "Carbide",
+      "Ceramics",
+      "Clathrate",
+      "Half-metals",
+      "Heusler",
+      "Mg2Si",
+      "Nitride",
+      "Perovskite",
+      "Telluride",
+      "ZnO",
+      "d-silicide"
+    ],
+    "fold_4": [
+      " Tetrahedrite",
+      "Antimonide",
+      "Borocarbonitride",
+      "Boron",
+      "Chalcopyrite",
+      "Cobaltite",
+      "Half-Heusler",
+      "Heavy-Fermion",
+      "Si",
+      "Silicon carbide",
+      "Stannite",
+      "Sulfide",
+      "tetrahedrites"
+    ]
+  },
+  "starrydata_family_note": "MaterialFamily is the Starrydata curator label; no chemistry was inferred.",
+  "starrydata_samples_missing_family_label": 10942,
+  "starrydata_papers_spanning_multiple_families": 206,
+  "starrydata_own_paper_holdout": {
+    "samples": 6,
+    "points": 148,
+    "by_doi": {
+      "10.1007/s00339-022-05662-2": {
+        "samples": 0,
+        "points": 0
+      },
+      "10.1016/j.jallcom.2020.157828": {
+        "samples": 2,
+        "points": 60
+      },
+      "10.1016/j.jallcom.2021.158621": {
+        "samples": 4,
+        "points": 88
+      },
+      "10.1016/j.jallcom.2022.163767": {
+        "samples": 0,
+        "points": 0
+      },
+      "10.1021/acsaenm.3c00649": {
+        "samples": 0,
+        "points": 0
+      },
+      "10.1039/d1ra04886d": {
+        "samples": 0,
+        "points": 0
+      },
+      "10.1088/1361-6463/abeb3e": {
+        "samples": 0,
+        "points": 0
+      },
+      "10.1088/2053-1591/ace30b": {
+        "samples": 0,
+        "points": 0
+      }
+    }
+  },
+  "jarvis_note": "DFT domain only; never mix with experimental targets. No DOI grouping possible. Leave-out flags come from existing columns in jarvis_te.csv.",
+  "cross_source": {
+    "flag_rows_by_type_and_pair": {
+      "composition:bi2te3_bulk_audited->jarvis_dft": 10,
+      "composition:bi2te3_bulk_audited->starrydata_experiment": 106,
+      "composition:jarvis_dft->bi2te3_bulk_audited": 1,
+      "composition:jarvis_dft->starrydata_experiment": 1109,
+      "composition:starrydata_experiment->bi2te3_bulk_audited": 1102,
+      "composition:starrydata_experiment->jarvis_dft": 3392,
+      "doi:bi2te3_bulk_audited->starrydata_experiment": 219,
+      "doi:starrydata_experiment->bi2te3_bulk_audited": 259
+    },
+    "shared_dois_starrydata_vs_audited": 46,
+    "shared_dois_in_Starrydata_Bi2Te3_family": 30,
+    "shared_dois_with_same_role_both_sources_paper_random": 41,
+    "shared_dois_with_role_mismatch": [
+      "10.1007/s11664-016-4828-3",
+      "10.1016/j.pnsc.2017.02.009",
+      "10.1038/am.2013.86",
+      "10.1039/c0jm01424a",
+      "10.1088/1674-1056/26/1/017202"
+    ]
+  },
+  "checks": {
+    "no_own_doi_in_train_or_val_bi2te3": true,
+    "no_own_doi_in_train_or_val_starrydata": true,
+    "each_doi_one_role_starrydata_ignoring_excluded": true,
+    "each_doi_one_role_bi2te3_ignoring_excluded": true,
+    "each_formula_one_role_jarvis": true,
+    "row_counts_preserved": {
+      "starrydata": 30530,
+      "bi2te3": 740,
+      "jarvis": 23558
+    }
+  }
+}

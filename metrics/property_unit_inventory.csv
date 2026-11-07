@@ -1,0 +1,365 @@
+prop_x,unit_x,prop_y,unit_y,curves
+" Sr concentration, x",-,Power factor,W*m^(-1)*K^(-2),1
+" Sr concentration, x",-,Seebeck coefficient,V*K^(-1),1
+ mol% F4TCNQ,-,Seebeck coefficient,V*K^(-1),1
+ wt% F4TCNQ:P3HT,-,Power factor,W*m^(-1)*K^(-2),2
+ wt% F4TCNQ:P3HT,-,Seebeck coefficient,V*K^(-1),2
+(10^3/T)^(1/4),K^(-1/4),Electrical conductivity,ohm^(-1)*m^(-1),9
+-,-,-,-,52
+--,-,--,-,2
+1/T,K^(-1),Carrier Density n,1/m**3,2
+1/T,K^(-1),Electrical conductivity,ohm^(-1)*m^(-1),3
+1/T,K^(-1),Electrical resistivity,ohm*m,4
+1/T,K^(-1),Seebeck coefficient,V*K^(-1),1
+1/T^(-1/2),1/K^(-1/2),Electrical resistivity,ohm*m,1
+1/T^(-1/4),T^(-1/4),Electrical resistivity,ohm*m,5
+1/T^(-1/4),T^(-1/4),ln(Electrical resistivity),ohm*m,3
+1000/T,K,Carrier concentration,m^(-3),16
+1000/T,K,Carrier mobility,m^2*V^(-1)*s^(-1),4
+1000/T,K,Conductivity,S/m,3
+1000/T,K,Electrical conductivity,ohm^(-1)*m^(-1),83
+1000/T,K,Electrical resistivity,ohm*m,55
+1000/T,K,Hall coefficient,m^3*C^(-1),11
+1000/T,K,Hall mobility,m^2*V^(-1)*s^(-1),11
+1000/T,K,Log(row),ohm*m,2
+1000/T,K,Seebeck coefficient,V*K^(-1),55
+1000/T,K,ln(Electrical resistivity),ohm*m,10
+1000/T,K,ln(Hall coefficient),m,1
+1000/T,K,log(Electrical resistivity),kg*m**3/A**2/s**3,10
+1000/T,K,log(sigma),A**2*s**3/kg/m**3,4
+1000/T,K,thermopower,V*K^(-1),42
+1000/T.,K^(-1),Electrical conductivity,ohm^(-1)*m^(-1),10
+Annealing Temperature,K,Conductivity,S/m,2
+Annealing Temperature,K,Electrical conductivity,ohm^(-1)*m^(-1),3
+Annealing Temperature,K,Power factor,W*m^(-1)*K^(-2),5
+Annealing Temperature,K,Seebeck coefficient,V*K^(-1),8
+Annealing Temperature,K,Thermal conductivity,W*m^(-1)*K^(-1),3
+Annealing Temperature,K,ZT,-,3
+Bi2Te3 nanoparticle fraction (vol %),-,Electrical conductivity,ohm^(-1)*m^(-1),3
+Bi2Te3 nanoparticle fraction (vol %),-,Power factor,W*m^(-1)*K^(-2),3
+Bi2Te3 nanoparticle fraction (vol %),-,Seebeck coefficient,V*K^(-1),3
+Bi2Te3 nanoparticle fraction (vol %),-,Thermal conductivity,W*m^(-1)*K^(-1),3
+Bi2Te3 nanoparticle fraction (vol %),-,ZT,-,3
+C rate,-,Discharge capacity,A*s/kg,136
+Ca2.7Yb0.3Co4O9,K,Electrical resistivity,ohm*m,5
+Carrier concentration,m^(-3),Carrier concentration,m^(-3),3
+Carrier concentration,m^(-3),Carrier mobility,m^2*V^(-1)*s^(-1),97
+Carrier concentration,m^(-3),Electrical conductivity,ohm^(-1)*m^(-1),28
+Carrier concentration,m^(-3),Electrical conductivity0,A**2*s**2/kg/m**2,2
+Carrier concentration,m^(-3),Electrical resistivity,ohm*m,1
+Carrier concentration,m^(-3),Electrical thermal conductivity,W*m^(-1)*K^(-1),3
+Carrier concentration,m^(-3),Fermi energy,m,4
+Carrier concentration,m^(-3),Hall mobility,A*s**2/kg,10
+Carrier concentration,m^(-3),Hall mobility,m^2*V^(-1)*s^(-1),51
+Carrier concentration,m^(-3),Lattice thermal conductivity,W*m^(-1)*K^(-1),3
+Carrier concentration,m^(-3),Power factor,W*m^(-1)*K^(-2),27
+Carrier concentration,m^(-3),Seebeck coefficient,V*K^(-1),546
+Carrier concentration,m^(-3),Thermal conductivity,W*m^(-1)*K^(-1),3
+Carrier concentration,m^(-3),ZT,-,94
+Carrier concentration,m^(-3),mol %,-,1
+Carrier concentration,m^(-3),thermopower,V*K^(-1),8
+Carrier mobility,m^2*V^(-1)*s^(-1),Carrier concentration,m^(-3),1
+Charge capacity,A*s/kg,Voltage,V,289
+Concentration,kg,Power factor,W*m^(-1)*K^(-2),12
+Conductivity,S/m,Seebeck  coefficient ,V,2
+Creep Strain,-,thermopower,V*K^(-1),1
+Cycle number,-,Discharge capacity,A*s/kg,191
+DMSO doping percent,m,Electrical conductivity,ohm^(-1)*m^(-1),1
+Days,-,Seebeck coefficient,V*K^(-1),4
+Density,kg*m**3,Electrical conductivity,ohm^(-1)*m^(-1),3
+Discharge capacity,A*s/kg,Voltage,V,298
+Dopant Concentration,mol/m**3,Carrier concentration,m^(-3),2
+Dopant Concentration,mol/m**3,Electrical conductivity,ohm^(-1)*m^(-1),2
+Dopant Concentration,mol/m**3,Power factor,W*m^(-1)*K^(-2),3
+Dopant Concentration,mol/m**3,Seebeck  coefficient ,V,2
+"Doping concentration, mol%",-,Electrical conductivity,ohm^(-1)*m^(-1),2
+"Doping concentration, mol%",-,Power factor,W*m^(-1)*K^(-2),1
+"Doping concentration, mol%",-,Seebeck coefficient,V*K^(-1),1
+Doping level,-,Carrier concentration,m^(-3),2
+Doping level,-,log(Electrical conductivity),S*m^(-1),4
+Duration,s,Electrical conductivity,ohm^(-1)*m^(-1),4
+Duration,s,Power factor,W*m^(-1)*K^(-2),4
+Electrical conductivity,ohm^(-1)*m^(-1),Power factor,W*m^(-1)*K^(-2),24
+Electrical conductivity,ohm^(-1)*m^(-1),Seebeck coefficient,V*K^(-1),15
+Electrical conductivity,ohm^(-1)*m^(-1),Thermal conductivity,W*m^(-1)*K^(-1),1
+Electrical conductivity,ohm^(-1)*m^(-1),ZT,-,3
+Electrical resistivity,ohm*m,Figure of merit Z,K^(-1),1
+Electrical resistivity,ohm*m,Power factor,W*m^(-1)*K^(-2),1
+Electronic thermal conductivity,W*m^(-1)*K^(-1),Lattice thermal conductivity,W*m^(-1)*K^(-1),6
+Frequency,Hz,Power/frequency,-,2
+"Gate voltage, Vg",V,Seebeck coefficient,V*K^(-1),3
+Hall concentration,m**3,Hall mobility,m^2*V^(-1)*s^(-1),2
+Hall concentration,m**3,Lattice thermal conductivity,W*m^(-1)*K^(-1),4
+I/A,-,Resistance,ohm,1
+Inverse temperature,K^(-1),Carrier concentration,m^(-3),63
+Inverse temperature,K^(-1),Carrier mobility,m^2*V^(-1)*s^(-1),14
+Inverse temperature,K^(-1),Electrical conductivity,ohm^(-1)*m^(-1),2233
+Inverse temperature,K^(-1),Electrical resistivity,ohm*m,619
+Inverse temperature,K^(-1),Electronic thermal conductivity,W*m^(-1)*K^(-1),2
+Inverse temperature,K^(-1),Hall coefficient,m^3*C^(-1),51
+Inverse temperature,K^(-1),Hall mobility,m^2*V^(-1)*s^(-1),2
+Inverse temperature,K^(-1),Lattice thermal conductivity,W*m^(-1)*K^(-1),62
+Inverse temperature,K^(-1),Power factor,W*m^(-1)*K^(-2),21
+Inverse temperature,K^(-1),Seebeck coefficient,V*K^(-1),756
+Inverse temperature,K^(-1),Thermal conductivity,W*m^(-1)*K^(-1),58
+Inverse temperature,K^(-1),ZT,-,6
+Inverse temperature,K^(-1),ln(Electrical conductivity),S*m^(-1),114
+Inverse temperature,K^(-1),ln(Electrical resistivity),ohm*m,107
+Inverse temperature,K^(-1),ln(T/ρ),-,6
+Inverse temperature,K^(-1),lnσT,A**2*s**3*K/kg/m**3,10
+Inverse temperature,K^(-1),log(Electrical conductivity),S*m^(-1),1616
+Inverse temperature,K^(-1),log(Electrical resistivity),kg*m**3/A**2/s**3,12
+Inverse temperature,K^(-1),log(Electrical resistivity),ohm*m,126
+Inverse temperature,K^(-1),logσT,S*m^(-1)*K,45
+Inverse temperature,K^(-1),thermopower,V*K^(-1),8
+Inverse temperature,K^(-1),σT,A**2*s**3*K/kg/m**3,6
+Inversed Temperature,1/K,Electrical conductivity,ohm^(-1)*m^(-1),10
+Inversed Temperature,1/K,Electrical resistivity,ohm*m,17
+Inversed Temperature,1/K,Hall coefficient,m^3*C^(-1),6
+Inversed Temperature,1/K,Hall mobility,A*s**2/kg,6
+La content,-,Electrical conductivity,ohm^(-1)*m^(-1),1
+La content,-,Power factor,W*m^(-1)*K^(-2),1
+La content,-,Seebeck coefficient,V*K^(-1),1
+La content,-,Thermal conductivity,W*m^(-1)*K^(-1),1
+Lattice thermal conductivity,W*m^(-1)*K^(-1),Temperature,K,1
+Magnetic Field,A/m,magnetization_per_weight,emu*g^(-1),16
+Magnetic field,T,Magnetic susceptibility_per_weight,emu/g,4
+Magnetic field,T,magnetization_per_weight,emu*g^(-1),4
+Magnetic field,T,magnetoresistance,-,2
+Magnetic field strength (H),A/m,magnetization_per_weight,emu*g^(-1),7
+"Na concentration, x",N,hierarchy of energies of cluster models,m**2*kg/s**2,4
+Nanowire diameter,-,Electrical conductivity,ohm^(-1)*m^(-1),2
+Nanowire diameter,-,Seebeck coefficient,V*K^(-1),6
+Nanowire diameter,-,Thermal diffusivity,m**2/s,8
+Nb content,-,Carrier concentration,m^(-3),1
+Nb content,-,Carrier mobility,m^2*V^(-1)*s^(-1),1
+No. of BL,-,Electrical conductivity,ohm^(-1)*m^(-1),1
+No. of BL,-,Power factor,W*m^(-1)*K^(-2),1
+No. of BL,-,Seebeck coefficient,V*K^(-1),1
+PEI,-,Electrical conductivity,ohm^(-1)*m^(-1),3
+PEI,-,Thermopower,kg*m**2/A/s**3,4
+PRESSURE,Pa,Electrical conductivity,ohm^(-1)*m^(-1),3
+PRESSURE,Pa,Power factor,W*m^(-1)*K^(-2),3
+PRESSURE,Pa,S,V/K,1
+PRESSURE,Pa,Sab,V/K,2
+PRESSURE,Pa,Seebeck coefficient,V*K^(-1),3
+PRESSURE,Pa,TEP,V/K,5
+PRESSURE,Pa,Voltage,V,7
+Pressure,Pa,Electrical resistivity,ohm*m,2
+RGO content (wt.%),-,Electrical conductivity,ohm^(-1)*m^(-1),1
+RGO content (wt.%),-,Power factor,W*m^(-1)*K^(-2),1
+RGO content (wt.%),-,Seebeck coefficient,V*K^(-1),1
+Rate,mA/g,Discharge capacity,A*s/kg,17
+SDBS,-,Electrical conductivity,ohm^(-1)*m^(-1),2
+SDBS,-,Thermopower,kg*m**2/A/s**3,2
+SWCNTs content (wt%),-,Electrical conductivity,ohm^(-1)*m^(-1),4
+SWCNTs content (wt%),-,Power factor,W*m^(-1)*K^(-2),3
+SWCNTs content (wt%),-,Seebeck coefficient,V*K^(-1),3
+Seebeck coefficient,V*K^(-1),Electrical conductivity,ohm^(-1)*m^(-1),3
+Seebeck coefficient,V*K^(-1),Seebeck coefficient,V*K^(-1),7
+Solid content (mg/mL),-,Electrical conductivity,ohm^(-1)*m^(-1),1
+Solid content (mg/mL),-,Power factor,W*m^(-1)*K^(-2),1
+Solid content (mg/mL),-,Seebeck coefficient,V*K^(-1),1
+Solid content (mg/mL),-,Thickness,m,1
+"Sr concentration, x",-,Electrical conductivity,ohm^(-1)*m^(-1),1
+"Sr concentration, x",-,Seebeck coefficient,V*K^(-1),4
+"Sr concentration, x",-,Thermal diffusivity,m**2/s,4
+T,K,Electrical conductivity,ohm^(-1)*m^(-1),10
+T,K,Electrical resistivity,ohm*m,44
+T,K,Hall coefficient,m^3*C^(-1),28
+T,K,Hall mobility,A*s**2/kg,1
+T,K,Lattice thermal conductivity,W*m^(-1)*K^(-1),28
+T,K,Lorenz number,V^2*K^-2,1
+T,K,Magnetic susceptibility_per_weight,emu/g,1
+T,K,Seebeck coefficient,V*K^(-1),33
+T,K,Specific heat,J*mol^(-1)*K^(-2),8
+T,K,Specific heat capacity,J*mol^(-1)*K^(-1),1
+T,K,Thermal conductivity,W*m^(-1)*K^(-1),40
+T,K,ZT,-,64
+T,K,magnetic susceptibility,A*m**2/mol,17
+T,K,phonon thermal conductance,W*m^(-1)*K^(-1),6
+T^(-1),K^(-1),Electrical conductivity,ohm^(-1)*m^(-1),7
+T^(-1),K^(-1),Thermal conductivity,W*m^(-1)*K^(-1),3
+T^(-1/2),K^(-1/2),Electrical resistivity,ohm*m,4
+T^(-1/3),K^(-1/3),Electrical resistivity,ohm*m,1
+T^(-1/4),K^(-1/2),Electrical resistivity,ohm*m,18
+T^(-1/4),K^(-1/2),ln(Electrical conductivity),S*m^(-1),3
+T^(-1/4),K^(-1/2),log(Electrical conductivity),S*m^(-1),10
+T^(3/2),K^(3/2),Electrical resistivity,ohm*m,1
+T^2,K^2,Electrical resistivity,ohm*m,1
+T^2,K^2,Specific heat,J*mol^(-1)*K^(-2),20
+Temperature,K,Calculated Seebeck coefficient,V/K,6
+Temperature,K,Carrier Density n,1/m**3,29
+Temperature,K,Carrier concentration,m^(-3),2031
+Temperature,K,Carrier mobility,m^2*V^(-1)*s^(-1),1374
+Temperature,K,Carrier thermal conductivity,W*m^(-1)*K^(-1),102
+Temperature,K,Coercivity Field,A/m,7
+Temperature,K,Conductivity,S/m,10
+Temperature,K,Contact resistivity,ohm*m^2,6
+Temperature,K,Density,kg*m**3,5
+Temperature,K,Dielectric loss (tanδ),-,6
+Temperature,K,Dielectric permittivity (ε’),-,11
+Temperature,K,Electrical conductivity,ohm^(-1)*m^(-1),18109
+Temperature,K,Electrical conductivity0,A**2*s**2/kg/m**2,3
+Temperature,K,Electrical resistivity,ohm*m,18617
+Temperature,K,Electro Motive Force,kg*m**2/A/s**3,9
+Temperature,K,Electronic contribution,W*m^(-1)*K^(-1),27
+Temperature,K,Electronic thermal conductivity,W*m^(-1)*K^(-1),645
+Temperature,K,Figure of merit,K^(-1),36
+Temperature,K,Figure of merit Z,K^(-1),500
+Temperature,K,Figure of merit Z 1000,K^(-1),1
+Temperature,K,Figure of merit Zt,K^(-1),4
+Temperature,K,Hall coefficient,m^3*C^(-1),591
+Temperature,K,Hall concentration,m**3,10
+Temperature,K,Hall mobility,A*s**2/kg,51
+Temperature,K,Hall mobility,m^2*V^(-1)*s^(-1),370
+Temperature,K,Inverse magnetic susceptibility,emu^(-1)*g,3
+Temperature,K,Lattice contribution,W*m^(-1)*K^(-1),35
+Temperature,K,Lattice thermal conductivity,W*m^(-1)*K^(-1),6828
+Temperature,K,Lattice+bipolar thermal conductivity,W*m^(-1)*K^(-1),12
+Temperature,K,Linewidth,m**2*kg/s**2,2
+Temperature,K,Log(row),ohm*m,13
+Temperature,K,Lorenz number,V^2*K^-2,4
+Temperature,K,Lorenz values,-,5
+Temperature,K,Luminescence lifetime,-,1
+Temperature,K,Magnetic susceptibility_per mol,A*m**2/mol,19
+Temperature,K,Magnetic susceptibility_per_weight,emu/g,43
+Temperature,K,Max Efficiency,-,9
+Temperature,K,Mobility,A*s**3/kg,22
+Temperature,K,Nernst coefficient,m**2/s/K,5
+Temperature,K,Normalised PL Integrated Intensity,-,1
+Temperature,K,Open circuit voltage ,V,4
+Temperature,K,Phonon transmission function,kg*m**2/s**3/K,3
+Temperature,K,Power factor,W*m^(-1)*K^(-2),17629
+Temperature,K,RH,ohm*m*T^(-1),20
+Temperature,K,Resistance,ohm,32
+Temperature,K,Resistivity,ohm*m^-1,14
+Temperature,K,S,V/K,70
+Temperature,K,S/L0T,V^(-1),9
+Temperature,K,Seebeck  coefficient ,V,1
+Temperature,K,Seebeck coefficient,V*K^(-1),36373
+Temperature,K,Seebeck coefficient at 550 K,m**2*kg/A/s**3/K,1
+Temperature,K,Specific heat,J*mol^(-1)*K^(-2),11
+Temperature,K,Specific heat capacity,J*mol^(-1)*K^(-1),1
+Temperature,K,Specific heat capacity (J/gK),-,6
+Temperature,K,Surface Conductivity,ohm^(-1),1
+Temperature,K,TEP,V/K,4
+Temperature,K,T^(-1),K^(-1),4
+Temperature,K,Thermal conductivity,W*m^(-1)*K^(-1),23623
+Temperature,K,Thermal diffusivity,m**2/s,55
+Temperature,K,Thermal expansion,-,2
+Temperature,K,Thermo gravimetry,-,2
+Temperature,K,Thermoelectric power,V*K^(-1),16
+Temperature,K,Thermoelectric voltage,V,9
+Temperature,K,Thermopower,kg*m**2/A/s**3,47
+Temperature,K,Voltage,V,28
+Temperature,K,ZT,-,20791
+Temperature,K,conductance,S,1
+Temperature,K,conductivity,-,2
+Temperature,K,electron thermal conductivity,W*m^(-1)*K^(-1),99
+Temperature,K,hall density,1/m**3,20
+Temperature,K,inverse magnetic susceptibility_mol,mol/A/m**2,4
+Temperature,K,latice contribution,W*m^(-1)*K^(-1),1
+Temperature,K,ln(Electrical conductivity),S*m^(-1),16
+Temperature,K,ln(Electrical resistivity),ohm*m,30
+Temperature,K,log(Electrical conductivity),S*m^(-1),59
+Temperature,K,log(Electrical resistivity),kg*m**3/A**2/s**3,6
+Temperature,K,log(Electrical resistivity),ohm*m,33
+Temperature,K,magnetic susceptibility,A*m**2/mol,8
+Temperature,K,magnetoresistance,-,2
+Temperature,K,majority carrier concentration,1/m**3,4
+Temperature,K,minority carrier concentration,1/m**3,4
+Temperature,K,phonon contribution,W*m^(-1)*K^(-1),6
+Temperature,K,phonon thermal conductance,W*m^(-1)*K^(-1),25
+Temperature,K,thermopower,V*K^(-1),489
+Temperature,K,total thermal conductivity,W*m^(-1)*K^(-1),133
+Temperature,K,zero-B thermopower,m**2*kg/A/s**3/K,1
+Temperature,K,ρ,kg,4
+Temperature (oC),-,Electrical resistivity,ohm*m,19
+Temperature (oC),-,Hall coefficient,m^3*C^(-1),3
+Temperature (oC),-,Seebeck coefficient,V*K^(-1),7
+Temperature (oC),-,Thermal conductivity,W*m^(-1)*K^(-1),2
+Temperture Difference,K,Maximum output power,-,1
+Temperture Difference,K,Micro Volts,V,5
+Temperture Difference,K,Open circuit voltage ,V,1
+Temperture Difference,K,Seebeck  coefficient ,V,1
+Temperture Difference,K,Seebeck coefficient,V*K^(-1),1
+Temperture Difference,K,Short-circuit current,-,1
+Temperture Difference,K,Thermal conductivity,W*m^(-1)*K^(-1),1
+Temperture Difference,K,Thermoelectric voltage,V,5
+Temperture Difference,K,Thermopower,kg*m**2/A/s**3,1
+Temperture Difference,K,Voltage,V,15
+Temperture Difference,K,ZT,-,1
+Time,s,Carrier concentration,m^(-3),4
+Time,s,Electrical conductivity,ohm^(-1)*m^(-1),4
+Time,s,Open circuit voltage ,V,3
+Time,s,Resistance,ohm,2
+Time,s,Temperature,K,14
+Time,s,Voltage,V,4
+Time,s,delta T,-,8
+Time (hour),-,Electrical conductivity,ohm^(-1)*m^(-1),1
+Time (hour),-,Power factor,W*m^(-1)*K^(-2),1
+Time (hour),-,Seebeck coefficient,V*K^(-1),1
+Time Lapse,s,Conversion Voltage,kg*m**2/A/s**3,3
+Time Lapse,s,Conversion voltage,kg*m**2/A/s**3,1
+Vg,V,Electrical conductivity,ohm^(-1)*m^(-1),6
+Vg,V,Voltage response,V,1
+Voltage,V,Current,-,9
+Voltage,V,Current density,A/m**2,4
+Voltage,V,Electric current,A,2
+Voltage,V,Resistance,ohm,7
+Voltage,V,Seebeck coefficient,V*K^(-1),4
+Voltage,V,Temperature,K,8
+Wt.% SWCNT,-,Electrical conductivity,ohm^(-1)*m^(-1),1
+Wt.% SWCNT,-,Power factor,W*m^(-1)*K^(-2),1
+Wt.% SWCNT,-,Seebeck coefficient,V*K^(-1),1
+ZT,-,Figure of merit,K^(-1),4
+amount of Ag,-,Electrical resistivity,ohm*m,1
+amount of Ag,-,Power factor,W*m^(-1)*K^(-2),1
+amount of Ag,-,Seebeck coefficient,V*K^(-1),1
+composition x,-,Carrier mobility,m^2*V^(-1)*s^(-1),2
+concentrations,-,Carrier concentration,m^(-3),6
+concentrations,-,Seebeck coefficient,V*K^(-1),4
+concentrations,-,thermopower,V*K^(-1),3
+content,-,Carrier concentration,m^(-3),12
+content,-,Carrier mobility,m^2*V^(-1)*s^(-1),6
+content,-,Conductivity,S/m,1
+delta T,-,Voltage,V,1
+deltaVg,V,Seebeck coefficient,V*K^(-1),6
+deposition temperature,K,log(Electrical resistivity),kg*m**3/A**2/s**3,2
+diameter,-,Carrier concentration,m^(-3),1
+diameter,-,Carrier mobility,m^2*V^(-1)*s^(-1),2
+diameter,-,Electrical conductivity,ohm^(-1)*m^(-1),3
+diameter,-,Hall coefficient,m^3*C^(-1),1
+diameter,-,Power factor,W*m^(-1)*K^(-2),1
+diameter,-,Seebeck coefficient,V*K^(-1),3
+diameter,-,Thermal conductivity,W*m^(-1)*K^(-1),1
+diameter,-,ZT,-,1
+distance,-,ZT,-,3
+energy,-,Electrical conductivity,ohm^(-1)*m^(-1),3
+energy,-,Surface Conductivity,ohm^(-1),2
+frequency,-,Temperture Difference,K,1
+frequency,-,Voltage,V,5
+hall density,1/m**3,Seebeck coefficient,V*K^(-1),9
+hall density,1/m**3,ZT,-,4
+m,-,lattice thermal conductance,-,1
+magnetic field,T,Hall effect,-,1
+mol %,-,Carrier concentration,m^(-3),1
+mol %,-,Electrical conductivity,ohm^(-1)*m^(-1),1
+mol %,-,Lattice thermal conductivity,W*m^(-1)*K^(-1),6
+mol %,-,Power factor,W*m^(-1)*K^(-2),1
+mol %,-,Seebeck coefficient,V*K^(-1),1
+mol% F4TCNQ,-,Electrical conductivity,ohm^(-1)*m^(-1),1
+nm,m,absorbance,-,1
+position,m,Seebeck coefficient,V*K^(-1),3
+ratio of intensity,-,Electrical resistivity,ohm*m,6
+ratio of intensity,-,Seebeck coefficient,V*K^(-1),6
+ratio of intensity,-,Thermal conductivity,W*m^(-1)*K^(-1),6
+ratio of intensity,-,ZT,-,6
+sample name,-,Thermal conductivity,W*m^(-1)*K^(-1),4
+thermopower,V*K^(-1),Carrier concentration,m^(-3),1
+thickness,m,thermopower,V*K^(-1),1
+width,-,Electrical conductivity,ohm^(-1)*m^(-1),2
+width,-,Seebeck coefficient,V*K^(-1),2
+wt% F4TCNQ:P3HT,-,Electrical conductivity,ohm^(-1)*m^(-1),2
+μ,-,Power factor,W*m^(-1)*K^(-2),1

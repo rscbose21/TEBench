@@ -1,0 +1,15 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "starrydata_experiment_schema_unique_ids_rowcount": true,
+    "jarvis_dft_schema_unique_ids_rowcount": true,
+    "bi2te3_bulk_audited_schema_unique_ids_rowcount": true,
+    "jarvis_all_original_columns_and_carrier_conversions": true,
+    "literal_NaN_formula_is_Na_plus_N_not_missing": true,
+    "bi2te3_all_89_original_columns_conversions_holdout_and_excel_rows": true,
+    "starrydata_original_metadata_rows_and_point_property_flag_conservation": true,
+    "all_input_hashes_match_builder_manifest": true,
+    "pairwise_overlap_recount": true
+  },
+  "scope": "File/schema/row/provenance/conversion conservation only; not a source-paper or scientific validity audit."
+}
