@@ -10,4 +10,4 @@ version: 1.0.0
 date-released: 2026-11-07
 repository-code: "https://github.com/rscbose21/TEBench"
 url: "https://github.com/rscbose21/TEBench"
-abstract: "Local v1.0.0 release candidate. DFT and experimental tables are separate. Includes canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curves and points are not redistributed. No archival DOI has been minted."
+abstract: "v1.0.0 release candidate (7 November 2026). DFT and experimental tables are separate. Includes canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curves and points are not redistributed. No archival DOI has been minted."
