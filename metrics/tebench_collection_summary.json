@@ -1,0 +1,624 @@
+{
+  "stage": "local collection only; no benchmark/model/split claims",
+  "generated_Asia_Calcutta": "2026-11-07T13:42:24.308359+05:30",
+  "common_columns": [
+    "tebench_id",
+    "source",
+    "domain",
+    "granularity",
+    "composition",
+    "temperature_K",
+    "seebeck_uV_K",
+    "sigma_S_m",
+    "kappa_total_W_m_K",
+    "zT",
+    "PF_W_m_K2",
+    "doi",
+    "paper_id",
+    "sample_record_id",
+    "quality_flags",
+    "original_file",
+    "original_sheet",
+    "original_row",
+    "provenance_pointer",
+    "units_json",
+    "conditions_note"
+  ],
+  "units": {
+    "temperature_K": "K",
+    "seebeck_uV_K": "uV/K",
+    "sigma_S_m": "S/m",
+    "kappa_total_W_m_K": "W/(m K)",
+    "zT": "dimensionless",
+    "PF_W_m_K2": "W/(m K^2)"
+  },
+  "inputs": [
+    {
+      "path": "/workspace/thermogpt/tebench/sample_metadata.csv.gz",
+      "bytes": 2141932,
+      "sha256": "cdbe0f4b1587e28ce57f0208986a52e690259fec4d42cf17752442b968dfc32d"
+    },
+    {
+      "path": "/workspace/thermogpt/tebench/starrydata_te_points_experiment.csv.gz",
+      "bytes": 31838926,
+      "sha256": "9106ef0729814ed72f4317179f94f0daf262596ec47fb899621d3821244ce3b8"
+    },
+    {
+      "path": "/workspace/thermogpt/jarvis_te.csv",
+      "bytes": 28218973,
+      "sha256": "24ac8e6cb16b57bce54bfae1fb42e6ecc71d9f21408229a6bec70b5647e140a4"
+    },
+    {
+      "path": "/workspace/thermogpt/tebench/Bi2Te3_BULK_dataset_v2.xlsx",
+      "bytes": 396985,
+      "sha256": "9f96fe6c7b285d31d88515772ac4445b58867ca03682f5f181f5461f73c1a74d"
+    },
+    {
+      "path": "/workspace/thermogpt/tebench/starrydata_te_points_candidates.csv.gz",
+      "bytes": 44349156,
+      "sha256": "62e8889d9b070a228756330e9da84a33f9cd4ee5ddaed862e0ce431297faf954"
+    },
+    {
+      "path": "/workspace/thermogpt/tebench/starrydata_te_experiment_exact_T_wide.csv.gz",
+      "bytes": 22076730,
+      "sha256": "4b5417bb5124299fbe84a36887d87a8bee2a98cf33aed758284b634dc24fd693"
+    },
+    {
+      "path": "/workspace/thermogpt/01_jarvis_thermoelectric_dataset.ipynb",
+      "bytes": 275798,
+      "sha256": "5e5ef5abdd51da4ea4f3e326d596e13ef39fb14d1b1d69e92b049f2f76c01043"
+    }
+  ],
+  "input_columns": {
+    "sample_metadata": [
+      "sample_name",
+      "sample_id",
+      "composition",
+      "composition_details",
+      "SID",
+      "DOI",
+      "created_at",
+      "updated_at",
+      "sample_info",
+      "DataType",
+      "MaterialFamily",
+      "Form",
+      "FabricationProcess",
+      "ElectricalMeasurement",
+      "ThermalMeasurement"
+    ],
+    "starrydata_experiment_long": [
+      "curve_row",
+      "point_index",
+      "SID",
+      "sample_id",
+      "figure_id",
+      "DOI",
+      "composition",
+      "temperature_K",
+      "property",
+      "raw_value",
+      "raw_unit",
+      "conversion_factor",
+      "value",
+      "sample_name",
+      "sample_composition",
+      "DataType",
+      "MaterialFamily",
+      "Form",
+      "missing_value",
+      "missing_temperature",
+      "composition_missing",
+      "composition_mismatch",
+      "temperature_review",
+      "physical_sign_review",
+      "magnitude_review",
+      "composition_T_source_repeat",
+      "sample_T_property_repeat",
+      "experimental_label"
+    ],
+    "jarvis": [
+      "jid",
+      "formula",
+      "spacegroup",
+      "spacegroup_number",
+      "bandgap_optb88vdw",
+      "bandgap_mbj",
+      "ehull",
+      "n-Seebeck",
+      "p-Seebeck",
+      "n-powerfact",
+      "p-powerfact",
+      "ncond",
+      "pcond",
+      "nkappa",
+      "pkappa",
+      "avg_elec_mass",
+      "avg_hole_mass",
+      "BiSbTeSe_only",
+      "contains_Bi_and_Te",
+      "atoms_json"
+    ],
+    "bi2te3_Data_sheet": [
+      "sample_id",
+      "source_type",
+      "is_own_data",
+      "reference_doi",
+      "first_author",
+      "year",
+      "series_id",
+      "extraction_source_norm",
+      "extraction_confidence",
+      "material_system_norm",
+      "conduction_type",
+      "composition_formula",
+      "x_Bi",
+      "x_Sb",
+      "x_Te",
+      "x_Se",
+      "x_S",
+      "dopant_1",
+      "dopant_1_at_pct",
+      "dopant_2",
+      "dopant_2_at_pct",
+      "dopant_3",
+      "dopant_3_at_pct",
+      "phase_type_norm",
+      "second_phase",
+      "second_phase_wt_pct",
+      "route_norm",
+      "milling_time_h",
+      "milling_speed_rpm",
+      "powder_particle_size_um",
+      "consolidation_norm",
+      "sintering_temp_C",
+      "sintering_pressure_MPa",
+      "sintering_time_min",
+      "heating_rate_C_min",
+      "atmosphere_norm",
+      "anneal_temp_C",
+      "anneal_time_h",
+      "relative_density_pct",
+      "grain_size_um",
+      "texture_class_norm",
+      "texture_metric",
+      "texture_value",
+      "lattice_a_A",
+      "lattice_c_A",
+      "meas_temp_K",
+      "elec_dir_norm",
+      "kappa_dir_norm",
+      "dir_mismatch",
+      "kappa_method_norm",
+      "Cp_source_norm",
+      "carrier_conc_cm3",
+      "log_carrier_conc",
+      "mobility_cm2_Vs",
+      "seebeck_uV_K",
+      "sigma_S_cm",
+      "rho_mOhm_cm",
+      "PF_uW_cmK2",
+      "kappa_total_W_mK",
+      "kappa_lattice_W_mK",
+      "zT_at_meas_T",
+      "zT_max",
+      "T_zTmax_K",
+      "PF_check_uW_cmK2",
+      "PF_ratio",
+      "zT_check",
+      "zT_ratio",
+      "qc_flag",
+      "qc_action",
+      "ml_include",
+      "material_system_verbatim",
+      "phase_type_verbatim",
+      "powder_synthesis_route_verbatim",
+      "consolidation_method_verbatim",
+      "sintering_atmosphere_verbatim",
+      "texture_class_verbatim",
+      "elec_meas_direction_verbatim",
+      "kappa_meas_direction_verbatim",
+      "kappa_method_verbatim",
+      "Cp_source_verbatim",
+      "extraction_source_verbatim",
+      "notes",
+      "rho_check_mOhm_cm",
+      "rho_ratio",
+      "L_WF_1e8",
+      "kappa_e_WF_W_mK",
+      "kappa_L_implied_W_mK",
+      "qc_flag_v2",
+      "qc_tier"
+    ]
+  },
+  "csv_text_parsing_note": "keep_default_na=False preserves literal chemical formulas such as NaN (Na + N). Empty numeric cells are explicitly coerced to missing.",
+  "sources": {
+    "starrydata_experiment": {
+      "harmonized_rows": 30530,
+      "distinct_sample_record_ids": 30530,
+      "distinct_nonempty_composition_strings_as_provided": 18724,
+      "distinct_nonempty_composition_strings_whitespace_stripped": 18674,
+      "distinct_normalized_DOIs": 6045,
+      "common_scalar_property_nonmissing": {
+        "temperature_K": 0,
+        "seebeck_uV_K": 0,
+        "sigma_S_m": 0,
+        "kappa_total_W_m_K": 0,
+        "zT": 0,
+        "PF_W_m_K2": 0
+      },
+      "point_rows": 1648315,
+      "papers_by_SID": 6045,
+      "point_DOIs": 6045,
+      "curve_composition_strings": 18674,
+      "sample_metadata_total_rows": 55743,
+      "sample_metadata_duplicate_keys": 0,
+      "samples_with_missing_composition": 41,
+      "property_coverage": {
+        "seebeck_uV_K": {
+          "points": 486762,
+          "samples": 25537
+        },
+        "sigma_S_m": {
+          "points": 185422,
+          "samples": 12766
+        },
+        "rho_ohm_m": {
+          "points": 294214,
+          "samples": 11850
+        },
+        "kappa_W_m_K": {
+          "points": 259110,
+          "samples": 17152
+        },
+        "power_factor_W_m_K2": {
+          "points": 199969,
+          "samples": 13568
+        },
+        "zT": {
+          "points": 222838,
+          "samples": 15670
+        }
+      },
+      "flag_point_counts": {
+        "missing_value": 0,
+        "missing_temperature": 0,
+        "composition_missing": 1138,
+        "composition_mismatch": 0,
+        "temperature_review": 64,
+        "physical_sign_review": 4093,
+        "magnitude_review": 4784,
+        "composition_T_source_repeat": 64291,
+        "sample_T_property_repeat": 3721
+      },
+      "flagged_points_any_flag": 73696,
+      "samples_with_any_flag": 7370,
+      "material_family_counts": {
+        "<missing>": 10942,
+        "Bi2Te3": 1725,
+        "Perovskite": 1694,
+        "Oxide": 1647,
+        "Skutterudite": 1580,
+        "Half-Heusler": 1374,
+        "Cobaltite": 1019,
+        "PbTe": 933,
+        "Heavy-Fermion": 872,
+        "Telluride": 863,
+        "Antimonide": 814,
+        "Alloy": 789,
+        "Selenide": 788,
+        "Mg2Si": 675,
+        "Sulfide": 668,
+        "Silicide": 572,
+        "Polymer": 554,
+        "Chalcogenide": 551,
+        "Clathrate": 463,
+        "Heusler": 423,
+        "ZnO": 306,
+        "Zintl": 263,
+        "Metal": 153,
+        "Si/Ge": 147,
+        "Organic": 120,
+        "Si": 119,
+        "SnSe": 119,
+        "Carbide": 44,
+        "Chalcopyrite": 43,
+        "Boron": 41,
+        "Germinide": 40,
+        "Silicon carbide": 33,
+        "SiGe": 27,
+        "Phosphide": 23,
+        "Graphene": 22,
+        "Nitride": 13,
+        "Aluminide": 9,
+        "Stannite": 7,
+        "d-silicide": 7,
+        "Chevrel phase": 7,
+        "Argyrodite": 7,
+        "Germanide": 5,
+        "Ceramics": 4,
+        "tetrahedrites": 4,
+        "Ruthenates": 4,
+        "Iron pnictides": 3,
+        "diamondlike structure": 3,
+        "Borocarbonitride": 2,
+        " Tetrahedrite": 2,
+        "Borom": 2,
+        "Graphite Intercalation Compounds": 2,
+        "Half-metals": 1,
+        "Tl4TiS4": 1,
+        "Sb2Te3(GeTe)17": 1
+      },
+      "temperature_bounds_retained_not_validated_K": [
+        -18.20086,
+        2013.663
+      ],
+      "raw_property_unit_pairs": [
+        {
+          "property": "seebeck_uV_K",
+          "raw_unit": "V*K^(-1)"
+        },
+        {
+          "property": "sigma_S_m",
+          "raw_unit": "ohm^(-1)*m^(-1)"
+        },
+        {
+          "property": "kappa_W_m_K",
+          "raw_unit": "W*m^(-1)*K^(-1)"
+        },
+        {
+          "property": "rho_ohm_m",
+          "raw_unit": "ohm*m"
+        },
+        {
+          "property": "zT",
+          "raw_unit": "-"
+        },
+        {
+          "property": "power_factor_W_m_K2",
+          "raw_unit": "W*m^(-1)*K^(-2)"
+        }
+      ],
+      "samples_S_and_sigma_or_rho_and_total_kappa_and_zT_anywhere_not_aligned": 13198
+    },
+    "jarvis_dft": {
+      "harmonized_rows": 23558,
+      "distinct_sample_record_ids": 23558,
+      "distinct_nonempty_composition_strings_as_provided": 18475,
+      "distinct_nonempty_composition_strings_whitespace_stripped": 18475,
+      "distinct_normalized_DOIs": 0,
+      "common_scalar_property_nonmissing": {
+        "temperature_K": 23558,
+        "seebeck_uV_K": 0,
+        "sigma_S_m": 0,
+        "kappa_total_W_m_K": 0,
+        "zT": 0,
+        "PF_W_m_K2": 0
+      },
+      "input_records": 23558,
+      "unique_jids": 23558,
+      "missing_formula_records": 0,
+      "papers": null,
+      "papers_note": "No material-specific paper DOI in local extract; doi and paper_id are blank. jid is sample_record_id.",
+      "property_nonmissing_records": {
+        "n_seebeck_uV_K": 23218,
+        "n_PF_W_m_K2": 23218,
+        "n_sigma_raw_unit_unverified": 23218,
+        "n_electronic_kappa_over_tau_raw": 23218,
+        "p_seebeck_uV_K": 23218,
+        "p_PF_W_m_K2": 23218,
+        "p_sigma_raw_unit_unverified": 23218,
+        "p_electronic_kappa_over_tau_raw": 23218
+      },
+      "records_without_transport": 340,
+      "scalar_transport_columns_intentionally_blank": true,
+      "n_Seebeck_positive_review_not_error": 6709,
+      "p_Seebeck_negative_review_not_error": 6594
+    },
+    "bi2te3_bulk_audited": {
+      "harmonized_rows": 740,
+      "distinct_sample_record_ids": 740,
+      "distinct_nonempty_composition_strings_as_provided": 646,
+      "distinct_nonempty_composition_strings_whitespace_stripped": 644,
+      "distinct_normalized_DOIs": 151,
+      "common_scalar_property_nonmissing": {
+        "temperature_K": 740,
+        "seebeck_uV_K": 715,
+        "sigma_S_m": 710,
+        "kappa_total_W_m_K": 688,
+        "zT": 687,
+        "PF_W_m_K2": 711
+      },
+      "input_records": 740,
+      "source_type_counts": {
+        "Literature": 710,
+        "Own": 30
+      },
+      "is_own_data_counts": {
+        "0": 710,
+        "1": 30
+      },
+      "ml_include_counts": {
+        "1": 681,
+        "0": 59
+      },
+      "qc_tier_counts": {
+        "A (passes all tests)": 692,
+        "C (excluded)": 29,
+        "B (flagged, retained)": 19
+      },
+      "direction_mismatch_records": 25,
+      "papers_by_group": {
+        "literature": {
+          "records": 710,
+          "normalized_DOIs": 144
+        },
+        "own_holdout": {
+          "records": 30,
+          "normalized_DOIs": 8
+        },
+        "ml_include_1": {
+          "records": 681,
+          "normalized_DOIs": 141
+        }
+      },
+      "own_DOIs_also_in_literature": [
+        "10.1021/acsaenm.3c00649"
+      ],
+      "own_DOIs_also_in_ml_include_1": [],
+      "own_records_ml_include_true": 0,
+      "workbook_sheets": {
+        "Summary": [
+          39,
+          3
+        ],
+        "Data": [
+          740,
+          89
+        ],
+        "CHANGELOG": [
+          101,
+          6
+        ],
+        "QC_flagged": [
+          48,
+          20
+        ],
+        "Vocab_map": [
+          265,
+          4
+        ]
+      }
+    }
+  },
+  "candidate_inventory_not_all_experiment": {
+    "file": "/workspace/thermogpt/tebench/starrydata_te_points_candidates.csv.gz",
+    "point_rows": 2342194,
+    "samples": 47797,
+    "papers_by_SID": 8557,
+    "composition_strings": 25874,
+    "point_counts_by_property": {
+      "seebeck_uV_K": 709532,
+      "kappa_W_m_K": 357100,
+      "rho_ohm_m": 463044,
+      "zT": 288876,
+      "sigma_S_m": 266321,
+      "power_factor_W_m_K2": 257321
+    },
+    "point_counts_by_DataType": {
+      "Experiment": 1648315,
+      "": 676143,
+      "Reference": 14298,
+      "Unknown": 1928,
+      "NeedCheck": 909,
+      "Other": 601
+    },
+    "included_in_harmonized_experiment": false
+  },
+  "existing_exact_T_pivot_inventory": {
+    "file": "/workspace/thermogpt/tebench/starrydata_te_experiment_exact_T_wide.csv.gz",
+    "rows": 1634273,
+    "nonmissing_by_property": {
+      "seebeck_uV_K": 485702,
+      "sigma_S_m": 477880,
+      "rho_ohm_m": 293320,
+      "kappa_W_m_K": 258142,
+      "power_factor_W_m_K2": 199718,
+      "zT": 222713
+    },
+    "four_property_exact_T_rows_before_QC": 62,
+    "warning": "Existing convenience pivot; conflicting cells omitted, flags remain in long file. Not a training table."
+  },
+  "overlap": {
+    "matching_basis": "Harmonized composition field: Starrydata sample_metadata composition, JARVIS formula, Bi2Te3 composition_formula; whitespace removed only.",
+    "DOI_method": "trim/lowercase/remove standard resolver or doi: prefix; exclude blanks; no citation or duplicate audit",
+    "pairwise": [
+      {
+        "source_a": "starrydata_experiment",
+        "source_b": "jarvis_dft",
+        "formula_string_overlap": 475,
+        "normalized_DOI_overlap": 0
+      },
+      {
+        "source_a": "starrydata_experiment",
+        "source_b": "bi2te3_bulk_audited",
+        "formula_string_overlap": 37,
+        "normalized_DOI_overlap": 46
+      },
+      {
+        "source_a": "jarvis_dft",
+        "source_b": "bi2te3_bulk_audited",
+        "formula_string_overlap": 1,
+        "normalized_DOI_overlap": 0
+      }
+    ],
+    "all_three_formula_strings": [
+      "Bi2Te3"
+    ],
+    "all_three_normalized_DOIs": [],
+    "alternate_Starrydata_curve_composition_vs_JARVIS_formula_overlap": 475,
+    "detail_file": "/workspace/thermogpt/tebench/tebench_overlap_keys.csv"
+  },
+  "bi2te3_family_relation": {
+    "selection_method": "Starrydata metadata MaterialFamily exactly equals Bi2Te3; not chemical parsing",
+    "selected_experiment_samples": 1725,
+    "selected_experiment_points": 73314,
+    "selected_experiment_DOIs": 408,
+    "shared_normalized_DOIs_with_audited_sheet": 30,
+    "shared_DOIs": [
+      "10.1002/adfm.201400474",
+      "10.1002/adfm.201402663",
+      "10.1002/aenm.201100338",
+      "10.1002/aenm.201401391",
+      "10.1002/aenm.201500411",
+      "10.1007/s11664-012-2003-z",
+      "10.1007/s11664-013-2565-4",
+      "10.1007/s11664-014-3038-0",
+      "10.1007/s11664-015-4297-0",
+      "10.1007/s11664-016-4828-3",
+      "10.1007/s13391-014-4139-x",
+      "10.1016/j.carbon.2012.10.008",
+      "10.1016/j.pnsc.2017.02.009",
+      "10.1021/acsami.0c02408",
+      "10.1021/acsami.3c11235",
+      "10.1038/am.2013.86",
+      "10.1039/c0ee00012d",
+      "10.1039/c0jm01424a",
+      "10.1039/c1jm10163c",
+      "10.1039/c1jm13880d",
+      "10.1039/c2jm32916f",
+      "10.1039/c2jm34608g",
+      "10.1039/c3ta12764h",
+      "10.1039/c5tc02263k",
+      "10.1063/1.4737898",
+      "10.1063/1.4861727",
+      "10.1088/0957-4484/24/28/285702",
+      "10.1126/science.1156446",
+      "10.1155/2013/210767",
+      "10.3390/en81112323"
+    ],
+    "own_holdout_DOIs_present_in_selected_Starrydata": [
+      "10.1016/j.jallcom.2020.157828",
+      "10.1016/j.jallcom.2021.158621"
+    ],
+    "audited_records_on_shared_DOIs": 150,
+    "family_samples_on_shared_DOIs": 169,
+    "interpretation": "Publication/string overlap is a leakage-review cue, not independent experiments or identical records. No merging, overwriting, or averaging."
+  },
+  "outputs": [
+    "/workspace/thermogpt/tebench/tebench_starrydata_experiment.csv.gz",
+    "/workspace/thermogpt/tebench/tebench_jarvis_dft.csv.gz",
+    "/workspace/thermogpt/tebench/tebench_bi2te3_bulk_audited.csv.gz",
+    "/workspace/thermogpt/tebench/tebench_overlap_keys.csv",
+    "/workspace/thermogpt/tebench/tebench_bi2te3_relation_notes.md"
+  ],
+  "not_done": [
+    "canonical composition parsing",
+    "source-aware deduplication",
+    "structure matching",
+    "leakage-safe split creation",
+    "temperature alignment",
+    "ML training",
+    "publication/upload"
+  ]
+}

@@ -1,0 +1,30 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# macOS / editor clutter
+.DS_Store
+
+# Local Starrydata rebuilds. Official curve/point dumps are not part of this
+# repository; see README.md and NOTICE.md.
+scripts/raw/
+starrydata_te_points_candidates.csv.gz
+starrydata_te_points_experiment.csv.gz
+starrydata_te_experiment_exact_T_wide.csv.gz
+scripts/sample_metadata.csv.gz
+scripts/excluded_curves.csv.gz
+scripts/removed_exact_duplicate_points.csv.gz
+scripts/conflicting_sample_T_properties.csv.gz

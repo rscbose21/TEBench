@@ -1,0 +1,6 @@
+{
+  "description": "Heuristic review flags excluded; not source-audited or final training data",
+  "points": 1639376,
+  "temperature_K_min": 0.000869844,
+  "temperature_K_max": 1999.76
+}

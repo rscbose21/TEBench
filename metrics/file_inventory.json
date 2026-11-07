@@ -1,0 +1,102 @@
+[
+  {
+    "path": "references.bib",
+    "bytes": 1099
+  },
+  {
+    "path": "README.md",
+    "bytes": 12112
+  },
+  {
+    "path": "jarvis_exact_formula_overlap.csv",
+    "bytes": 4103
+  },
+  {
+    "path": "qc_unflagged_range.json",
+    "bytes": 186
+  },
+  {
+    "path": "build_starrydata.py",
+    "bytes": 7807
+  },
+  {
+    "path": "excluded_curves.csv.gz",
+    "bytes": 65293
+  },
+  {
+    "path": "conflicting_sample_T_properties.csv.gz",
+    "bytes": 20031
+  },
+  {
+    "path": "removed_exact_duplicate_points.csv.gz",
+    "bytes": 16015
+  },
+  {
+    "path": "sample_metadata.csv.gz",
+    "bytes": 2141932
+  },
+  {
+    "path": "summary.json",
+    "bytes": 3165
+  },
+  {
+    "path": "download_provenance.json",
+    "bytes": 1378
+  },
+  {
+    "path": "starrydata_te_experiment_exact_T_wide.csv.gz",
+    "bytes": 22076730
+  },
+  {
+    "path": "property_unit_inventory.csv",
+    "bytes": 17571
+  },
+  {
+    "path": "starrydata_te_points_experiment.csv.gz",
+    "bytes": 31838926
+  },
+  {
+    "path": "starrydata_te_points_candidates.csv.gz",
+    "bytes": 44349156
+  },
+  {
+    "path": "raw/manifest.json",
+    "bytes": 12232
+  },
+  {
+    "path": "raw/ThermoelectricMaterials_papers.csv.gz",
+    "bytes": 1478435
+  },
+  {
+    "path": "raw/ThermoelectricMaterials_samples.csv.gz",
+    "bytes": 2084262
+  },
+  {
+    "path": "raw/download_manual.txt",
+    "bytes": 6968
+  },
+  {
+    "path": "raw/citation.txt",
+    "bytes": 3224
+  },
+  {
+    "path": "raw/license_directory.txt",
+    "bytes": 1161
+  },
+  {
+    "path": "raw/download_manual.html",
+    "bytes": 44931
+  },
+  {
+    "path": "raw/ThermoelectricMaterials_curves.csv.gz",
+    "bytes": 25523966
+  },
+  {
+    "path": "raw/license_directory.html",
+    "bytes": 73600
+  },
+  {
+    "path": "raw/citation.html",
+    "bytes": 38736
+  }
+]

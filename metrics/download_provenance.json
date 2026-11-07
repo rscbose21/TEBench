@@ -1,0 +1,33 @@
+{
+  "retrieved_date_IST": "2026-11-07",
+  "source_manifest_url": "https://starrydata.github.io/starrydata_datasets/manifest.json",
+  "manifest_generated_IST": "2026-11-07T04:27:48+05:30",
+  "db_snapshot_IST": "2026-11-06T22:30:01+05:30",
+  "project": "ThermoelectricMaterials",
+  "files": [
+    {
+      "filename": "ThermoelectricMaterials_papers.csv.gz",
+      "rows": 9558,
+      "bytes": 1478435,
+      "sha256": "a2aad17ebc706219939ba96e40329f8c378c17196cb69ab9ed5d44248d7e0e71",
+      "url": "https://github.com/starrydata/starrydata_datasets/releases/latest/download/ThermoelectricMaterials_papers.csv.gz",
+      "sha256_verified": true
+    },
+    {
+      "filename": "ThermoelectricMaterials_samples.csv.gz",
+      "rows": 55743,
+      "bytes": 2084262,
+      "sha256": "2de4a1611924cca857b292db92c60c809cefe32e72730382687d841ef0993e13",
+      "url": "https://github.com/starrydata/starrydata_datasets/releases/latest/download/ThermoelectricMaterials_samples.csv.gz",
+      "sha256_verified": true
+    },
+    {
+      "filename": "ThermoelectricMaterials_curves.csv.gz",
+      "rows": 158401,
+      "bytes": 25523966,
+      "sha256": "9e59ae1fc7d16801fbaacbf5652ee352b717f536cb25c82c6dc376d8dcd5c549",
+      "url": "https://github.com/starrydata/starrydata_datasets/releases/latest/download/ThermoelectricMaterials_curves.csv.gz",
+      "sha256_verified": true
+    }
+  ]
+}
