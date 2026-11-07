@@ -1,15 +1,79 @@
-> **Local revision — 7 November 2026 (IST):** The historical reference baseline
-> description below is retained for provenance. Current canonical keys, κ-QC100
-> reruns, validation-selected HGB/structure-tabular comparisons and limitations
-> are documented in `REMAINING_WORK_REPORT.md` and
-> `submission_package/README_submission.md`. New outputs have not been pushed,
-> released or deposited; no archival DOI is claimed. Original RF rows are kept.
+# TEBench — source-labelled thermoelectric data collection, proposed splits and CPU baselines
 
-# TEBench — local three-source collection
+TEBench keeps three thermoelectric sources as separate source- and domain-labelled tables: Starrydata
+Experiment-labelled curves (ThermoelectricMaterials project), a JARVIS-DFT transport extract and an audited bulk
+Bi2Te3 workbook. It provides proposed leakage-safe split keys (paper-, family- and formula-grouped, plus an
+own-paper hold-out that is never used for fitting), cross-source leakage flags and CPU baselines. DFT and
+experimental targets are never pooled. It is a research collection with proposed tasks, not a released benchmark.
 
-Local research staging dataset, not a finished benchmark or claim of novelty. Retrieved 7 November 2026 (IST / Asia/Calcutta). No user-computer files were accessed, no training run and no cloud resource launched.
+Manuscript: S. C. B. Rapaka, *TEBench: a source-labelled thermoelectric data collection with leakage-safe splits
+and baselines for machine learning*.
 
-## Official sources and reproducibility
+## Current state: revision of 7 November 2026
+
+- **Composition identity.** Whole composition strings are parsed with pymatgen `Composition(strict=True)` and
+  normalised with `get_integer_formula_and_factor(max_denominator=1000000)`. Strings that cannot be parsed
+  (annotations such as `Bi0.5Sb1.5Te3 + 2 mass% Te`, variables, dopant notes) stay unmatched; nothing is guessed.
+  Canonical keys are in the `canonical_formula` column; per-string results are in
+  `notes/revision_20261107/composition_parse_*.csv`. This replaces the whitespace-stripped string matching
+  described in the first-pass notes below.
+- **Splits.** JARVIS formula groups were regenerated from canonical keys (seed 20261107; 1,221 role changes).
+  Experimental paper and family roles are unchanged. All eight own-paper DOIs stay out of training and
+  validation in every source and scheme.
+- **κ screening.** For the Starrydata total-κ task only, the flag `kappa_physical_QC100` excludes κ ≤ 0 or
+  κ > 100 W m⁻¹ K⁻¹ (1,412 of the 259,059 points that pass the earlier flags). The flag index is
+  `notes/revision_20261107/kappa_QC100_flag_index.csv`; flagged points are not deleted.
+- **Baselines.** `metrics/tebench_baseline_metrics.csv` holds 114 rows: the 40 original random-forest rows
+  (`RF_reference_original`) and 74 revision rows (revised RF, validation-selected HistGradientBoosting and, for
+  JARVIS, HistGradientBoosting with structure-derived features). The `model` column names the estimator; the
+  `RF_*` metric column names are kept for backward compatibility. Selection records are in
+  `notes/revision_20261107/model_selection.json`.
+- **Structure candidates.** Composition-to-JID candidates, with multiplicity, are in
+  `notes/revision_20261107/experimental_jarvis_structure_candidates.csv`. They are composition candidates, not
+  unique structure matches.
+- **Release.** `CITATION.cff` and `RELEASE_NOTES.md` describe v1.0.0 (7 November 2026). No tagged release or
+  archival DOI exists yet; an archived snapshot with a DOI will be added later.
+
+The first-pass staging notes further down are kept for provenance. Where they describe whitespace-stripped
+string matching, string-grouped JARVIS splits, the unscreened κ baseline or "no tuning", the revision above
+supersedes them.
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `data/` | Audited Bi2Te3 workbook; harmonised JARVIS and Bi2Te3 tables; composition/DOI overlap keys |
+| `splits/` | Split keys for all three sources and cross-source leakage flags |
+| `metrics/` | Metrics, JARVIS and Bi2Te3 predictions, collection and split summaries, download provenance |
+| `notes/revision_20261107/` | Revision audits: composition parsing, structure candidates, κ flag index, model selection, JARVIS provenance |
+| `plots/` | Parity plots |
+| `scripts/` | Collection, split, baseline and revision scripts |
+
+Raw Starrydata curve and point tables are not redistributed; `NOTICE.md` gives the licences, the pinned
+snapshot and how to rebuild them.
+
+## Reproducing the results
+
+The scripts were run with all inputs and outputs in one working folder: each script reads and writes files next
+to itself. A rerun therefore needs the files from `data/`, `splits/` and `metrics/` copied next to the scripts,
+with `notes/revision_20261107/` as a subfolder, plus inputs that are not in this repository:
+
+- the raw Starrydata ThermoelectricMaterials files of the pinned snapshot (`metrics/download_provenance.json`),
+  rebuilt with `build_starrydata.py` and `build_tebench_collection.py`;
+- the local JARVIS extract `jarvis_te.csv` (size and SHA-256 in `notes/revision_20261107/JARVIS_PROVENANCE.md`);
+- `notes/revision_20261107/reference_metrics.csv` and `reference_jarvis_splits.csv.gz`, which
+  `complete_tebench_revision.py` reads to keep the original RF rows.
+
+Order: `build_tebench_collection.py`, `validate_tebench_collection.py`, `build_tebench_splits.py`, then
+`complete_tebench_revision.py`. Do not run `run_tebench_baselines.py` on its own after the revision: it
+regenerates only the original RF rows and overwrites `tebench_baseline_metrics.csv`.
+`refresh_tebench_submission.py` only rebuilds manuscript documents and figures.
+
+## First-pass staging notes (7 November 2026)
+
+The notes below record how the collection was first built. Counts and file names are those of the first pass.
+
+### Official sources and reproducibility
 - Web system: https://www.starrydata2.org/
 - Official download instructions: https://starrydata.nims.go.jp/hp/en/manual/download/
 - Daily download portal: https://starrydata.github.io/starrydata_datasets/
@@ -17,13 +81,13 @@ Local research staging dataset, not a finished benchmark or claim of novelty. Re
 - Frozen monthly archives: https://figshare.com/projects/Starrydata_datasets/155129
 - Citation: https://starrydata.nims.go.jp/hp/cite/
 
-Downloaded only the official `ThermoelectricMaterials` project, not every project in the database (organic thermoelectrics are a separate project and are not included here). Three public `.csv.gz` files: papers, samples, curves. No login required. Download URLs: `https://github.com/starrydata/starrydata_datasets/releases/latest/download/ThermoelectricMaterials_{papers,samples,curves}.csv.gz`. Raw files and manifest retained under `raw/`; all three SHA-256 hashes were verified against the saved manifest. The latest URL changes, so reuse these saved bytes/hashes, not an unpinned future download. `raw/manifest.json` contains the exact snapshot and original counts. Snapshot time converted from its JST value: **6 November 2026, 22:30:01 IST**. Manifest generation: **7 November 2026, 04:27:48 IST**.
+Downloaded only the official `ThermoelectricMaterials` project, not every project in the database (organic thermoelectrics are a separate project and are not included here). Three public `.csv.gz` files: papers, samples, curves. No login required. Download URLs: `https://github.com/starrydata/starrydata_datasets/releases/latest/download/ThermoelectricMaterials_{papers,samples,curves}.csv.gz`. Raw files and manifest were retained locally (not redistributed); all three SHA-256 hashes were verified against the saved manifest (`metrics/download_provenance.json`). The latest URL changes, so reuse these saved bytes/hashes, not an unpinned future download. The manifest records the exact snapshot and original counts. Snapshot time converted from its JST value: **6 November 2026, 22:30:01 IST**. Manifest generation: **7 November 2026, 04:27:48 IST**.
 
-A guessed dated GitHub tag `data-20261107` returned 404; the documented latest route worked. Figshare page/API returned 403 from this environment; no monthly snapshot DOI is claimed for these GitHub bytes. A matching archived snapshot DOI should be pinned before publication.
+The documented `latest` release route was used. No monthly Figshare snapshot DOI is claimed for these GitHub bytes; the nearest monthly archive (`20261101_starrydata2`) is listed in `NOTICE.md`.
 
-## License and attribution
+### License and attribution
 Official manual verbatim: “Starrydata2 data are free to use for both commercial and non-commercial purposes.”
-NIMS MatDaCs directory explicitly lists **“License | CC BY 4.0”**: https://mat-dacs.dxmt.nims.go.jp/en/list/392 . Evidence saved as `raw/license_directory.html` and `.txt`. CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . This permits reuse and sharing with attribution, a license link, and indication of changes. The daily files themselves do not carry a separate attached license in the download; retain this provenance and verify the license on the eventual archived release before public redistribution. No data were published/shared externally in this task.
+NIMS MatDaCs directory explicitly lists **“License | CC BY 4.0”**: https://mat-dacs.dxmt.nims.go.jp/en/list/392 . CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . This permits reuse and sharing with attribution, a license link, and indication of changes. The daily files themselves do not carry a separate attached license in the download; retain this provenance and verify the license on the eventual archived release before public redistribution.
 
 Official citation instruction: “To use the Starrydata2 web system and datasets, please cite one of the following papers and, if necessary, cite the original source papers.” For individual samples/curves, the official citation page further requests the original source paper (DOI is preserved here).
 
@@ -32,15 +96,15 @@ Yukari Katsura, Masaya Kumagai, Tomoya Mato, Yu Takada, Yuki Ando, Erina Fujita,
 
 Earlier project paper: Yukari Katsura et al. **Data-driven analysis of electron relaxation times in PbTe-type thermoelectric materials.** Science and Technology of Advanced Materials **20** (2019), 511–520. https://doi.org/10.1080/14686996.2019.1603885
 
-## Raw schema and joins
+### Raw schema and joins
 - Papers: SID, DOI, URL, issued, author, title, journal, volume, issue, pages, ISSN, publisher, project names, creation date.
 - Samples: SID, sample_id, sample_name, composition, composition_details, DOI, dates, sample_info (JSON).
 - Curves: SID, sample_id, DOI, composition, figure_id, figure_name, prop_x, prop_y, unit_x, unit_y, x/y JSON arrays, dates, project_names, comments. One row is a digitized curve, not a measurement point.
 - Use **(SID, sample_id)**, never composition alone, to join samples and curves. Validate many-to-one. Historical April–September 2026 exports had sample-id collisions; the selected snapshot is after the official correction. Figures should be identified by (SID, figure_id).
 - `sample_info` includes MaterialFamily, DataType, Form, FabricationProcess, electrical/thermal measurement metadata, density/grain-size fields where supplied. These are incomplete and retained in `sample_metadata.csv.gz`. There are no guaranteed crystallographic coordinates or unique structure mappings.
 
-## Cleaning and files
-Rebuild: `python3 build_starrydata.py` (requires pandas/numpy). Script reads only the three official raw tables and the previously named `/workspace/thermogpt/jarvis_te.csv` formula column.
+### Cleaning and files
+Rebuild: `python3 build_starrydata.py` (requires pandas/numpy). Script reads only the three official raw tables and the formula column of the local JARVIS extract `jarvis_te.csv`.
 
 1. Select only `prop_x == Temperature`, `unit_x == K` and canonical Seebeck coefficient, Electrical conductivity, Electrical resistivity, Thermal conductivity / total thermal conductivity, Power factor, ZT labels. Do NOT confuse lattice/electronic κ with total κ; do NOT treat dimensional Z (K^-1) as zT.
 2. Explode paired x/y arrays, retaining curve-row and point-index provenance. Numeric failures are missing, not zeros. Noncanonical axes/labels, inverse-T/log properties, unknown units, invalid arrays are excluded with reasons (`excluded_curves.csv.gz`). Inventory: `property_unit_inventory.csv`. Broad aliases need later manual review; this is a conservative subset.
@@ -53,17 +117,18 @@ Rebuild: `python3 build_starrydata.py` (requires pandas/numpy). Script reads onl
 
 `summary.json` gives auditable counts, property availability, flags, material-family labels, and overlap. `jarvis_exact_formula_overlap.csv` is whitespace-stripped exact-string overlap with all raw Starrydata samples; not structural validation or chemically canonical composition matching. Formula strings such as Bi2Te3 and Bi2Te3.0 may fail this conservative match. Formula equivalence, isotope/variable/dopant parsing and polymorphism remain unresolved.
 
-## Still needed before publication / modelling
-- The supplied `Bi2Te3_BULK_dataset_v2.xlsx` is now staged (740 audited records, including 30 own experimental hold-out records). Its supplied units, sample IDs, processing, QC and inclusion flags are preserved. Remaining needs include source-paper/uncertainty/repeat review and explicit permission before any external release. No other files were sought.
+### Still needed before publication / modelling (first-pass list)
+Several items were addressed later (canonical parsing, splits, baselines); see *Current state* above.
+- The supplied `Bi2Te3_BULK_dataset_v2.xlsx` is now staged (740 audited records, including 30 own experimental hold-out records). Its supplied units, sample IDs, processing, QC and inclusion flags are preserved. Remaining needs include source-paper/uncertainty/repeat review and explicit permission before any external release.
 - DOI/source audit of conflicts, composition/sample-name inconsistencies, unknown DataType, digitization and physical outliers. Some source records have sample names apparently inconsistent with composition; do not silently correct these.
 - Source-aware de-duplication across review/reference papers, canonical composition parsing, and complete processing metadata.
 - Crystallographic structure matching (experiment does not uniquely specify a DFT structure).
 - Temperature alignment policy with uncertainty; exact-T coverage is not the number of experimentally complete samples.
-- Fixed paper/sample-aware and composition/family-held-out splits; leave-Bi-Sb-Te-Se-out files; no splits or models run here. Keep related specimens and paper-derived duplicate curves from leaking across splits.
+- Fixed paper/sample-aware and composition/family-held-out splits; leave-Bi-Sb-Te-Se-out files; no splits or models had been run at this stage. Keep related specimens and paper-derived duplicate curves from leaking across splits.
 - DFT→experiment is not a direct apples-to-apples task: JARVIS transport uses fixed temperature/doping and approximations; experimental T, carrier concentration, microstructure, direction, and κ contributions vary. Do not pool DFT/experimental target values without explicit domain labels.
 - Hypotheses in the outline (e.g. noise imposes a ceiling, graphs never help new formulas) are NOT established conclusions from these data. A novel benchmark claim needs literature review and repeated baseline tests.
 
-## Observed counts in this first pass
+### Observed counts in this first pass
 
 These retain the first-pass context; composition counts here are as-provided strings unless specified. The recomputed three-source counts and whitespace-stripped matching keys are distinguished below.
 - Official downloaded project: **9,558 papers; 55,743 samples; 158,401 curves; 28,507 nonempty composition strings**.
@@ -78,21 +143,20 @@ These retain the first-pass context; composition counts here are as-provided str
 - Exact-string JARVIS overlap: **650 formulas** with all raw sample compositions; **475** with selected Experiment-labelled compositions. JARVIS extract contains **18,475** distinct formula strings when literal `NaN` (Na + N) is preserved; the earlier default-pandas count of 18,474 incorrectly treated that formula as missing. See the three-source parsing note below. These are conservative string matches, NOT structure matches.
 
 
-## Three-source collection
+### Three-source collection
 
-This is **local research staging, not a finished benchmark**, and not a new model
-or novelty result. Only existing project files were read; no user computer,
-network download, cloud resource, billing change, training, split creation,
-publication or upload was used. **Do not externally share or upload Starrydata**
-from this staging folder. Its official free-use / NIMS CC BY 4.0 notes and frozen
+This is a research collection, **not a finished benchmark**, and not a new model
+or novelty result. Starrydata curve and point tables are not redistributed (see
+`NOTICE.md`). Its official free-use / NIMS CC BY 4.0 notes and frozen
 snapshot provenance remain above. Cite Katsura et al., STAM Methods (2025),
 DOI **10.1080/27660400.2025.2506976**, and original source-paper DOIs as appropriate.
 
-### Rebuild and files
+#### Rebuild and files
 
 ```bash
-python3 /workspace/thermogpt/tebench/build_tebench_collection.py
-python3 /workspace/thermogpt/tebench/validate_tebench_collection.py
+# run in the working folder described under 'Reproducing the results'
+python3 build_tebench_collection.py
+python3 validate_tebench_collection.py
 ```
 
 Dependencies: Python 3, pandas, numpy, openpyxl. Both scripts operate locally.
@@ -102,7 +166,7 @@ Rebuilding replaces **only its generated staging outputs**. Text is read with
 `keep_default_na=False`: chemical formula `NaN` must not be mistaken for a
 missing-value token. Missing numeric cells are explicitly converted to missing.
 
-All files below are under `/workspace/thermogpt/tebench/`:
+Files written by the collection builder (in this repository under `data/`, `metrics/` and `notes/`; the Starrydata table is not redistributed):
 
 - `build_tebench_collection.py`: readable source-specific staging builder.
 - `tebench_starrydata_experiment.csv.gz`: one sample per row; existing long-table pointers.
@@ -113,7 +177,7 @@ All files below are under `/workspace/thermogpt/tebench/`:
 - `tebench_bi2te3_relation_notes.md`: labelled-family and own-data hold-out caveats.
 - `validate_tebench_collection.py`, `tebench_collection_validation.json`: reproducible conservation/provenance checks; not source-paper validation.
 
-### Recomputed source inventory
+#### Recomputed source inventory
 
 | Source label | Domain / granularity | Rows / records | Papers / DOIs | Composition strings, as supplied / whitespace removed |
 |---|---|---:|---|---:|
@@ -132,7 +196,7 @@ only, NOT all designated experimental and NOT added to the harmonized experiment
 selection. Candidate point labels: Experiment 1,648,315; blank 676,143;
 Reference 14,298; Unknown 1,928; NeedCheck 909; Other 601.
 
-### Property availability, before new source-paper QC
+#### Property availability, before new source-paper QC
 
 Starrydata availability means somewhere on a sample's curves, not simultaneous
 measurement, aligned temperature, or physically validated completeness:
@@ -172,7 +236,7 @@ all **59** excluded records remain in the staging table, including all own data.
 QC tiers: **692 A**, **19 B**, **29 C**; **25** directional mismatches remain flagged.
 These counts are descriptive of the supplied audit, not new audit conclusions.
 
-### Common schema and missing-value semantics
+#### Common schema and missing-value semantics
 
 Every harmonized table has the following columns:
 
@@ -213,7 +277,7 @@ tebench_id, source, domain, granularity, composition, temperature_K, seebeck_uV_
   `provenance_pointer` states the convention explicitly. Blanks are missing or
   inapplicable, never zero. Read formula/metadata text without default NA tokens.
 
-### Conservative overlap and Bi2Te3 relation
+#### Conservative overlap and Bi2Te3 relation (first pass: string matching, superseded by canonical keys)
 
 Composition matching removes all whitespace, otherwise preserves strings and
 case. It does not equate Bi2Te3, Bi2Te3.0 and Bi2Te3.00. DOI matching trims,
@@ -250,11 +314,11 @@ Preserve this cross-source leakage warning before designing combined experiments
 A supplied row-level hold-out is not a benchmark-wide leakage-safe split.
 
 The audited sheet is **one experimental subset**, not the entire benchmark.
-This staging does not recreate Subash's sole-author ACS Applied Energy Materials
-bulk-Bi2Te3 tabular ML paper, DOI **10.1021/acsaem.6c03156** (accepted
-22 October 2026), nor claim that previously published work as a new contribution.
+TEBench does not recreate the author's ACS Applied Energy Materials
+bulk-Bi2Te3 tabular ML paper, DOI **10.1021/acsaem.6c03156**, nor claim that
+previously published work as a new contribution.
 
-### Not claimed / remaining work
+#### Not claimed / remaining work
 
 No finished benchmark, independent-test claim, canonical chemical identity,
 structure equivalence, model score, noise ceiling, graph-model conclusion, or
@@ -272,17 +336,17 @@ novelty claim follows from this collection. Before modelling/publication:
    Experiment is a metadata label, not a source-paper audit. The retained range
    includes -18.20086 K and 2013.663 K; those bounds are not valid measurement claims.
 7. Confirm release permissions and pinned Starrydata archive attribution before
-   any future external sharing. This task publishes or uploads nothing.
+   any future external sharing.
 
-## Proposed leakage-safe splits (7 Nov 2026, PROPOSED keys only)
+### Proposed leakage-safe splits (first pass; JARVIS groups later regenerated from canonical keys)
 
-Built by `build_tebench_splits.py` (seed `20261107`). Not an official benchmark release; no models trained, nothing uploaded.
+Built by `build_tebench_splits.py` (seed `20261107`). Not an official benchmark release.
 Summary with all counts: `tebench_splits_summary.json`.
 
 How it works: each paper's (normalized DOI) train/val/test bucket comes from a seeded SHA-256 hash of the DOI
 (~70/15/15 by paper), so the same DOI gets the same bucket in Starrydata and in the audited sheet. Whole papers
-never straddle splits. Own-paper DOIs (all 8 `is_own_data==1` DOIs in the workbook, including the two the user
-confirmed on 7 Nov 2026: 10.1016/j.jallcom.2020.157828 and 10.1016/j.jallcom.2021.158621) are role
+never straddle splits. Own-paper DOIs (all 8 `is_own_data==1` DOIs in the workbook, including the two JALCOM
+papers 10.1016/j.jallcom.2020.157828 and 10.1016/j.jallcom.2021.158621) are role
 `own_paper_holdout` and never train/val, in every scheme and source.
 
 Files:
@@ -301,7 +365,7 @@ verbatim (e.g. " Tetrahedrite" vs "tetrahedrites", "Germinide" vs "Germanide" ar
 4 workbook rows marked Literature (BLK-644..647) carry own DOI 10.1021/acsaenm.3c00649 and were placed in
 `own_paper_holdout`.
 
-## CPU baselines (proposed splits; not a finished benchmark)
+### CPU baselines (first pass: untuned RF; see Current state for the revision)
 
 Script: `run_tebench_baselines.py` (CPU only, ~5 min on 8 cores). Outputs: `tebench_baseline_metrics.csv`,
 `tebench_baseline_summary.json`, `tebench_baseline_predictions_<source>.csv.gz`, `baseline_plots/*.png` (parity plots from real test predictions).

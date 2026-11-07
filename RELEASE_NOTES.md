@@ -1,4 +1,4 @@
-# TEBench v1.0.0 — local snapshot candidate
+# TEBench v1.0.0 — snapshot candidate
 
 Prepared 7 November 2026 (IST) for https://github.com/rscbose21/TEBench.
 This file and CITATION.cff prepare release metadata only: no tag, GitHub release,
@@ -15,10 +15,10 @@ date, not evidence that a release has been published.
   histogram gradient boosting, including structure-derived JARVIS tabular features.
 - Extract provenance and unresolved transport-unit/version metadata are explicit.
 
-See REMAINING_WORK_REPORT.md and notes/revision_20261107 for actual counts,
-metrics, model-selection records and limitations. Raw Starrydata dumps and the
-ACS publisher PDF are excluded from the submission package.
+See notes/revision_20261107 and metrics/tebench_baseline_metrics.csv for counts,
+metrics, model-selection records and limitations. Raw Starrydata dumps are not
+redistributed (see NOTICE.md).
 
 A versioned GitHub release will provide a frozen snapshot. An archival DOI will
-be added when an archive is deposited. No DOI is asserted here. The author must
-review upstream licence/attribution and publish/deposit the snapshot separately.
+be added when an archive is deposited. No DOI is asserted here. Upstream
+licences and attribution are summarised in NOTICE.md.
