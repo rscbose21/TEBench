@@ -1,0 +1,10 @@
+{
+  "all_sources_row_counts_preserved": true,
+  "canonical_jarvis_groups_single_role": true,
+  "literal_NaN_formula_preserved": true,
+  "own_paper_exclusions": true,
+  "DFT_experiment_not_pooled": true,
+  "new_QC_kappa_only": true,
+  "all_40_original_metric_rows_retained": true,
+  "new_metric_rows_recomputed_from_predictions": 74
+}

@@ -9,7 +9,7 @@
   "generated_Asia_Calcutta": "2026-11-07T14:28:30.496233+05:30",
   "grouping_method": "seeded sha256 hash of normalized DOI (or formula key for JARVIS); fractions are by group count, so record fractions vary",
   "doi_normalization": "trim + lowercase + remove https://(dx.)doi.org/ or doi: prefix",
-  "composition_matching": "whitespace-stripped string equality only; no chemical parsing, element-order or stoichiometry normalization",
+  "composition_matching": "pymatgen Composition(strict=True), positive real elements only; get_integer_formula_and_factor(max_denominator=1000000); no token fallback for matching; failures remain unmatched",
   "schemes": {
     "bi2te3_bulk_audited:split__own_holdout_default": {
       "records": {
@@ -110,36 +110,34 @@
     },
     "jarvis_dft:split__formula_random_70_15_15": {
       "materials": {
-        "excluded_no_formula": 1,
-        "test": 3415,
-        "train": 16409,
-        "val": 3733
+        "train": 16448,
+        "val": 3714,
+        "test": 3396
       },
       "formula_groups": {
-        "excluded_no_formula": 1,
-        "test": 2730,
-        "train": 12918,
-        "val": 2826
+        "test": 2724,
+        "train": 12951,
+        "val": 2798
       }
     },
     "jarvis_dft:split__leave_contains_Bi_and_Te_out": {
       "materials": {
-        "test": 34,
-        "train": 23524
+        "train": 23524,
+        "test": 34
       },
       "formula_groups": {
         "test": 34,
-        "train": 18441
+        "train": 18439
       }
     },
     "jarvis_dft:split__leave_BiSbTeSe_only_out": {
       "materials": {
-        "test": 52,
-        "train": 23506
+        "train": 23506,
+        "test": 52
       },
       "formula_groups": {
         "test": 18,
-        "train": 18457
+        "train": 18455
       }
     }
   },
@@ -313,6 +311,57 @@
       "starrydata": 30530,
       "bi2te3": 740,
       "jarvis": 23558
+    },
+    "literal_NaN_formula_restored": true
+  },
+  "revision_20261107": {
+    "parse": {
+      "bi2te3_bulk_audited": {
+        "records": 740,
+        "failed_records": 595,
+        "failed_distinct_strings": 574,
+        "canonical_formulas": 71
+      },
+      "starrydata_experiment": {
+        "records": 30530,
+        "failed_records": 1049,
+        "failed_distinct_strings": 609,
+        "canonical_formulas": 17343
+      },
+      "jarvis_dft": {
+        "records": 23558,
+        "failed_records": 0,
+        "failed_distinct_strings": 0,
+        "canonical_formulas": 18473
+      }
+    },
+    "jarvis_changed_assignments": 1221,
+    "jarvis_split_counts": {
+      "train": 16448,
+      "val": 3714,
+      "test": 3396
+    },
+    "structure_matches": {
+      "bi2te3_bulk_audited": {
+        "matched_experimental_formulas": 2,
+        "matched_experimental_records": 18,
+        "candidate_formula_jid_pairs": 2,
+        "matched_jids": 2,
+        "formulas_with_multiple_jids": 0
+      },
+      "starrydata_experiment": {
+        "matched_experimental_formulas": 647,
+        "matched_experimental_records": 4235,
+        "candidate_formula_jid_pairs": 1340,
+        "matched_jids": 1340,
+        "formulas_with_multiple_jids": 207
+      }
+    },
+    "structure_secondary_key": {
+      "experimental_records_with_space_group_or_crystal_system": 0,
+      "agreement_evaluable_pairs": 0,
+      "reason": "No experimental space-group/crystal-system or atomic-coordinate columns in either local experimental table; lattice a/c alone do not determine a crystal structure."
     }
-  }
+  },
+  "revision_generated_Asia_Calcutta": "2026-11-07T16:18:53.539745+05:30"
 }
