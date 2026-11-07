@@ -530,9 +530,32 @@
     "warning": "Existing convenience pivot; conflicting cells omitted, flags remain in long file. Not a training table."
   },
   "overlap": {
-    "matching_basis": "Harmonized composition field: Starrydata sample_metadata composition, JARVIS formula, Bi2Te3 composition_formula; whitespace removed only.",
+    "matching_basis": "pymatgen Composition(strict=True), positive real elements only; get_integer_formula_and_factor(max_denominator=1000000); no token fallback for matching; failures remain unmatched",
     "DOI_method": "trim/lowercase/remove standard resolver or doi: prefix; exclude blanks; no citation or duplicate audit",
     "pairwise": [
+      {
+        "source_a": "bi2te3_bulk_audited",
+        "source_b": "starrydata_experiment",
+        "canonical_formula_overlap": 38
+      },
+      {
+        "source_a": "bi2te3_bulk_audited",
+        "source_b": "jarvis_dft",
+        "canonical_formula_overlap": 2
+      },
+      {
+        "source_a": "starrydata_experiment",
+        "source_b": "jarvis_dft",
+        "canonical_formula_overlap": 647
+      }
+    ],
+    "all_three_formula_strings": [
+      "Bi2Te3"
+    ],
+    "all_three_normalized_DOIs": [],
+    "alternate_Starrydata_curve_composition_vs_JARVIS_formula_overlap": 475,
+    "detail_file": "tebench_overlap_keys.csv",
+    "historical_string_overlap": [
       {
         "source_a": "starrydata_experiment",
         "source_b": "jarvis_dft",
@@ -552,12 +575,10 @@
         "normalized_DOI_overlap": 0
       }
     ],
-    "all_three_formula_strings": [
-      "Bi2Te3"
-    ],
-    "all_three_normalized_DOIs": [],
-    "alternate_Starrydata_curve_composition_vs_JARVIS_formula_overlap": 475,
-    "detail_file": "/workspace/thermogpt/tebench/tebench_overlap_keys.csv"
+    "all_three_canonical_formulas": [
+      "Bi2Te3",
+      "Bi2Te2Se"
+    ]
   },
   "bi2te3_family_relation": {
     "selection_method": "Starrydata metadata MaterialFamily exactly equals Bi2Te3; not chemical parsing",
@@ -613,12 +634,101 @@
     "/workspace/thermogpt/tebench/tebench_bi2te3_relation_notes.md"
   ],
   "not_done": [
-    "canonical composition parsing",
-    "source-aware deduplication",
-    "structure matching",
-    "leakage-safe split creation",
-    "temperature alignment",
-    "ML training",
-    "publication/upload"
-  ]
+    "upstream JARVIS release identity and sigma/kappa tau/tensor conventions",
+    "unique experimental structure matching: atomic structures unavailable",
+    "archival DOI deposition and actual v1.0.0 release publication",
+    "source-paper and laboratory-provenance audit",
+    "temperature alignment beyond original exact-T handling"
+  ],
+  "revision_20261107": {
+    "seed": 20261107,
+    "canonical_method": "pymatgen Composition(strict=True), positive real elements only; get_integer_formula_and_factor(max_denominator=1000000); no token fallback for matching; failures remain unmatched",
+    "parse": {
+      "bi2te3_bulk_audited": {
+        "records": 740,
+        "failed_records": 595,
+        "failed_distinct_strings": 574,
+        "canonical_formulas": 71
+      },
+      "starrydata_experiment": {
+        "records": 30530,
+        "failed_records": 1049,
+        "failed_distinct_strings": 609,
+        "canonical_formulas": 17343
+      },
+      "jarvis_dft": {
+        "records": 23558,
+        "failed_records": 0,
+        "failed_distinct_strings": 0,
+        "canonical_formulas": 18473
+      }
+    },
+    "overlap": [
+      {
+        "source_a": "bi2te3_bulk_audited",
+        "source_b": "starrydata_experiment",
+        "canonical_formula_overlap": 38
+      },
+      {
+        "source_a": "bi2te3_bulk_audited",
+        "source_b": "jarvis_dft",
+        "canonical_formula_overlap": 2
+      },
+      {
+        "source_a": "starrydata_experiment",
+        "source_b": "jarvis_dft",
+        "canonical_formula_overlap": 647
+      }
+    ],
+    "bi2te3_bulk_audited_paper_split_unchanged": true,
+    "starrydata_experiment_paper_split_unchanged": true,
+    "jarvis_changed_assignments": 1221,
+    "jarvis_split_counts": {
+      "train": 16448,
+      "val": 3714,
+      "test": 3396
+    },
+    "leakage_flags": {
+      "composition:bi2te3_bulk_audited->jarvis_dft": 18,
+      "composition:bi2te3_bulk_audited->starrydata_experiment": 108,
+      "composition:jarvis_dft->bi2te3_bulk_audited": 2,
+      "composition:jarvis_dft->starrydata_experiment": 1340,
+      "composition:starrydata_experiment->bi2te3_bulk_audited": 1246,
+      "composition:starrydata_experiment->jarvis_dft": 4235,
+      "doi:bi2te3_bulk_audited->starrydata_experiment": 219,
+      "doi:starrydata_experiment->bi2te3_bulk_audited": 259
+    },
+    "structure_matches": {
+      "bi2te3_bulk_audited": {
+        "matched_experimental_formulas": 2,
+        "matched_experimental_records": 18,
+        "candidate_formula_jid_pairs": 2,
+        "matched_jids": 2,
+        "formulas_with_multiple_jids": 0
+      },
+      "starrydata_experiment": {
+        "matched_experimental_formulas": 647,
+        "matched_experimental_records": 4235,
+        "candidate_formula_jid_pairs": 1340,
+        "matched_jids": 1340,
+        "formulas_with_multiple_jids": 207
+      }
+    },
+    "structure_secondary_key": {
+      "experimental_records_with_space_group_or_crystal_system": 0,
+      "agreement_evaluable_pairs": 0,
+      "reason": "No experimental space-group/crystal-system or atomic-coordinate columns in either local experimental table; lattice a/c alone do not determine a crystal structure."
+    },
+    "structure_features_missing_rows": 0,
+    "kappa_QC": {
+      "all_kappa": 259110,
+      "prior_QC_kappa": 259059,
+      "prior_QC_kappa_gt100": 1412,
+      "prior_QC_kappa_gt1000": 123,
+      "prior_QC_kappa_le0": 0,
+      "all_kappa_new_flag": 1429,
+      "kappa_after_new_rule_before_join_and_feature_parse": 257647
+    }
+  },
+  "revision_generated_Asia_Calcutta": "2026-11-07T16:18:53.538803+05:30"
 }

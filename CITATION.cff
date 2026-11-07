@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use TEBench, please cite this version and the upstream data sources described in the manuscript."
+type: dataset
+title: "TEBench: source-labelled thermoelectric data collection, proposed splits and CPU baselines"
+authors:
+  - family-names: Rapaka
+    given-names: Subash Chandra Bose
+    orcid: "https://orcid.org/0000-0002-6499-8741"
+version: 1.0.0
+date-released: 2026-11-07
+repository-code: "https://github.com/rscbose21/TEBench"
+url: "https://github.com/rscbose21/TEBench"
+abstract: "Local v1.0.0 release candidate. DFT and experimental tables are separate. Includes canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curves and points are not redistributed. No archival DOI has been minted."
