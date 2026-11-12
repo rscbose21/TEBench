@@ -1,6 +1,6 @@
 # TEBench — source-labelled thermoelectric data collection, proposed splits and CPU baselines
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24151805.svg)](https://doi.org/10.5281/zenodo.24151805)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24151804.svg)](https://doi.org/10.5281/zenodo.24151804)
 
 TEBench keeps three thermoelectric sources as separate source- and domain-labelled tables: Starrydata
 Experiment-labelled curves (ThermoelectricMaterials project), a JARVIS-DFT transport extract and an audited bulk
@@ -11,6 +11,16 @@ experimental targets are never pooled. It is a research collection with proposed
 Preprint: S. C. B. Rapaka, *TEBench: a source-labelled thermoelectric data collection with leakage-safe splits
 and baselines for machine learning*, ChemRxiv (2026), https://doi.org/10.26434/chemrxiv.15011944.
 The manuscript has been submitted to ACS *Journal of Chemical Information and Modeling* and has not been accepted.
+
+## How to cite
+
+Please cite the preprint (preferred) and this archived code/data version:
+
+S. C. B. Rapaka, *TEBench: a source-labelled thermoelectric data collection with leakage-safe splits and baselines for machine learning*, ChemRxiv (2026), https://doi.org/10.26434/chemrxiv.15011944.
+
+TEBench v1.0.0 is archived at https://doi.org/10.5281/zenodo.24151805. The concept DOI https://doi.org/10.5281/zenodo.24151804 always points to the newest version (this repository is at v1.0.1; a new version DOI is minted when that tag is published to Zenodo). Also cite the upstream Starrydata, JARVIS-DFT and audited Bi2Te3 sources listed in `NOTICE.md` and in the manuscript.
+
+The GitHub "Cite this repository" button uses `CITATION.cff`. The preferred-citation title there matches the preprint. The top-level `CITATION.cff` title is a shorter dataset title; `.zenodo.json` uses the preprint title.
 
 ## Current state: revision of 7 November 2026
 
@@ -38,10 +48,11 @@ The manuscript has been submitted to ACS *Journal of Chemical Information and Mo
 - **Structure candidates.** Composition-to-JID candidates, with multiplicity, are in
   `notes/revision_20261107/experimental_jarvis_structure_candidates.csv`. They are composition candidates, not
   unique structure matches.
-- **Release.** `CITATION.cff` and `RELEASE_NOTES.md` describe v1.0.0 (12 November 2026). The ChemRxiv preprint
-  is DOI 10.26434/chemrxiv.15011944. The v1.0.0 GitHub release is archived on Zenodo:
-  DOI [10.5281/zenodo.24151805](https://doi.org/10.5281/zenodo.24151805) (this version; all versions:
-  [10.5281/zenodo.24151804](https://doi.org/10.5281/zenodo.24151804)).
+- **Release.** `CITATION.cff` and `RELEASE_NOTES.md` describe v1.0.1 (12 November 2026), which adds the
+  Starrydata harmonised sample table and Starrydata prediction files named in the manuscript data statement.
+  The ChemRxiv preprint is DOI 10.26434/chemrxiv.15011944. TEBench v1.0.0 is archived on Zenodo as
+  DOI [10.5281/zenodo.24151805](https://doi.org/10.5281/zenodo.24151805). The concept DOI
+  [10.5281/zenodo.24151804](https://doi.org/10.5281/zenodo.24151804) always points to the newest version.
 
 The first-pass staging notes further down are kept for provenance. Where they describe whitespace-stripped
 string matching, string-grouped JARVIS splits, the unscreened κ baseline or "no tuning", the revision above
@@ -51,9 +62,9 @@ supersedes them.
 
 | Path | Contents |
 |---|---|
-| `data/` | Audited Bi2Te3 workbook; harmonised JARVIS and Bi2Te3 tables; composition/DOI overlap keys |
+| `data/` | Audited Bi2Te3 workbook; harmonised Starrydata, JARVIS and Bi2Te3 tables; composition/DOI overlap keys |
 | `splits/` | Split keys for all three sources and cross-source leakage flags |
-| `metrics/` | Metrics; prediction files for JARVIS and Bi2Te3 (Starrydata predictions contain measured target values and are not redistributed; rebuild them with the scripts); collection and split summaries; download provenance |
+| `metrics/` | Metrics; prediction files for JARVIS, Bi2Te3 and Starrydata; collection and split summaries; download provenance |
 | `notes/revision_20261107/` | Revision audits: composition parsing, structure candidates, κ flag index, model selection, JARVIS provenance, and the included `reference_metrics.csv` and `reference_jarvis_splits.csv.gz` |
 | `plots/` | Parity plots |
 | `scripts/` | Collection, split, baseline and revision scripts |
@@ -177,7 +188,7 @@ Rebuilding replaces **only its generated staging outputs**. Text is read with
 `keep_default_na=False`: chemical formula `NaN` must not be mistaken for a
 missing-value token. Missing numeric cells are explicitly converted to missing.
 
-Files written by the collection builder (in this repository under `data/`, `metrics/` and `notes/`; the Starrydata table is not redistributed):
+Files written by the collection builder (in this repository under `data/`, `metrics/` and `notes/`):
 
 - `build_tebench_collection.py`: readable source-specific staging builder.
 - `tebench_starrydata_experiment.csv.gz`: one sample per row; existing long-table pointers.

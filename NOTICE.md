@@ -17,11 +17,36 @@ only under its own terms, and cite the papers below.
 - Also cite the JARVIS-DFT database paper: K. Choudhary et al., npj Computational Materials 6, 173 (2020) if that is the database source used in your work. The local extract SHA-256 hash is recorded in `notes/revision_20261107/JARVIS_PROVENANCE.md`; the upstream release identifier is not pinned.
 
 ## Starrydata experimental curves
+
 This repository does **not** redistribute raw Starrydata curve or point dumps.
-That includes the official ThermoelectricMaterials papers, samples, and curves
-files, `starrydata_te_*.csv.gz`, and `tebench_starrydata_experiment.csv.gz`.
-Rebuild those tables locally from the official snapshot with
-`scripts/build_starrydata.py` and `scripts/build_tebench_collection.py`.
+That includes the official ThermoelectricMaterials papers, samples and curves
+files from the pinned snapshot, and the intermediate long/point tables
+`starrydata_te_*.csv.gz`. Rebuild those raw tables locally from the official
+snapshot with `scripts/build_starrydata.py` and
+`scripts/build_tebench_collection.py`. SHA-256 hashes of the retrieved snapshot
+are in `metrics/download_provenance.json`.
+
+The following Starrydata-derived files **are** included. They are redistributed
+under the Starrydata2 CC BY 4.0 terms recorded below, with attribution and an
+indication of changes:
+
+- `data/tebench_starrydata_experiment.csv.gz`: sample-level harmonised table
+  (30,530 Experiment-labelled samples). Scalar transport cells are left blank
+  and point at the long table; quality-flag counts and a `canonical_formula`
+  column are added.
+- `metrics/tebench_baseline_predictions_starrydata_experiment.csv.gz` and
+  `metrics/tebench_revision_predictions_starrydata_experiment.csv.gz`: baseline
+  and revision predictions, including measured `y_true` targets, under the
+  proposed splits.
+- `splits/tebench_split_starrydata_experiment.csv.gz`: record identifiers and
+  split roles. It is not the property table itself.
+
+Changes relative to the official ThermoelectricMaterials snapshot: selection of
+the Experiment-labelled project split; unit and schema harmonisation to the
+TEBench columns; quality-flag summaries; canonical composition keys; proposed
+split roles; and CPU baseline and revision predictions. These derived files are
+not a substitute for the original curve or point dumps.
+
 - Official project: https://github.com/starrydata/starrydata_datasets
 - Official download instructions: https://starrydata.nims.go.jp/hp/en/manual/download/
 - Official download documentation: “Starrydata2 data are free to use for both commercial and non-commercial purposes.”
@@ -31,7 +56,4 @@ Rebuild those tables locally from the official snapshot with
 - The nearest Figshare monthly archive is `20261101_starrydata2`: https://figshare.com/articles/dataset/20261101_starrydata2/34875318
 - These retrieved GitHub Release bytes are not claimed to be byte-identical to that Figshare archive. No Figshare DOI is minted or asserted for this retrieval.
 - Cite: Y. Katsura et al., STAM: Methods 5, 2506976 (2025), DOI: 10.1080/27660400.2025.2506976
-- Also cite the original source papers (DOIs are preserved in the rebuilt tables).
-
-## Split keys
-`splits/tebench_split_starrydata_experiment.csv.gz` contains record identifiers and split roles for the Starrydata experiment collection. It is not the property table itself.
+- Also cite the original source papers (DOIs are preserved in the `doi` column of the bundled Starrydata-derived tables).

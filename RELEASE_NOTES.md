@@ -1,5 +1,26 @@
 # TEBench release notes
 
+## v1.0.1 (12 November 2026)
+
+This release adds the Starrydata files referenced in the manuscript data
+statement, so the public repository matches that statement.
+
+- Adds `data/tebench_starrydata_experiment.csv.gz`, the sample-level
+  harmonised Starrydata Experiment table (not the raw curve or point dumps).
+- Adds `metrics/tebench_baseline_predictions_starrydata_experiment.csv.gz` and
+  `metrics/tebench_revision_predictions_starrydata_experiment.csv.gz`.
+- Adds `.zenodo.json` (preprint title, author affiliation, ChemRxiv related
+  identifier) for the Zenodo deposit of this version.
+- Raw official ThermoelectricMaterials papers, samples and curves files, and
+  the intermediate long/point tables, remain unredistributed and are rebuilt
+  from the pinned snapshot (SHA-256 hashes in `metrics/download_provenance.json`).
+- TEBench v1.0.0 is archived as DOI 10.5281/zenodo.24151805. The concept DOI
+  10.5281/zenodo.24151804 always points to the newest version.
+
+See `NOTICE.md` for CC BY 4.0 attribution of the Starrydata-derived files
+(Katsura et al., STAM: Methods, 2025, and the original source-paper DOIs) and
+for the changes made (harmonisation, flags and predictions).
+
 ## v1.0.0 (12 November 2026)
 
 This is the first versioned public snapshot of TEBench, corresponding to the ChemRxiv preprint
@@ -18,8 +39,9 @@ been accepted. This release is archived on Zenodo as DOI 10.5281/zenodo.24151805
 - Original RF scores retained alongside revised RF and validation-selected CPU
   histogram gradient boosting, including structure-derived JARVIS tabular features.
 - Extract provenance and unresolved transport-unit/version metadata are explicit.
-- Prediction files for JARVIS and Bi2Te3 are in `metrics/`; Starrydata prediction files
-  contain measured target values and are not redistributed (rebuild them with the scripts). The reference files `notes/revision_20261107/reference_metrics.csv`
+- Prediction files for JARVIS and Bi2Te3 are in `metrics/`. The Starrydata
+  harmonised sample table and Starrydata prediction files were not included in
+  v1.0.0; they are added in v1.0.1. The reference files `notes/revision_20261107/reference_metrics.csv`
   and `notes/revision_20261107/reference_jarvis_splits.csv.gz` are included so the
   original RF rows can be reproduced.
 
@@ -49,6 +71,8 @@ See notes/revision_20261107 and metrics/tebench_baseline_metrics.csv for counts,
 metrics, model-selection records and limitations. Raw Starrydata dumps are not
 redistributed (see NOTICE.md).
 
-A versioned GitHub release will provide a frozen snapshot. An archival DOI will
-be added when an archive is deposited. No DOI is asserted here. Upstream
+The closing lines of the original 7 November note said that a versioned GitHub
+release would later provide a frozen snapshot and that no archival DOI was
+asserted yet. That was true on 7 November 2026. It is no longer the current
+status: see the v1.0.0 and v1.0.1 sections above for the Zenodo DOIs. Upstream
 licences and attribution are summarised in NOTICE.md.

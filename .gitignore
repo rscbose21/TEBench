@@ -28,3 +28,9 @@ scripts/sample_metadata.csv.gz
 scripts/excluded_curves.csv.gz
 scripts/removed_exact_duplicate_points.csv.gz
 scripts/conflicting_sample_T_properties.csv.gz
+
+# The sample-level harmonised table data/tebench_starrydata_experiment.csv.gz
+# and the Starrydata prediction files in metrics/ are tracked in the repository.
+# Only the raw official dumps and intermediate long/point tables listed above
+# are ignored.
+

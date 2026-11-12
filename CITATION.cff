@@ -6,28 +6,32 @@ authors:
   - family-names: Rapaka
     given-names: Subash Chandra Bose
     orcid: "https://orcid.org/0000-0002-6499-8741"
-version: 1.0.0
+    affiliation: "Centre for Materials for Electronics Technology (C-MET), Ministry of Electronics and Information Technology (MeitY), Thrissur, Kerala 680581, India"
+    email: "rscbose.21@cmet.gov.in"
+version: 1.0.1
 date-released: 2026-11-12
 repository-code: "https://github.com/rscbose21/TEBench"
 url: "https://github.com/rscbose21/TEBench"
-doi: "10.5281/zenodo.24151805"
+doi: "10.5281/zenodo.24151804"
 identifiers:
-  - type: doi
-    value: "10.5281/zenodo.24151805"
-    description: Zenodo archive of TEBench v1.0.0
   - type: doi
     value: "10.5281/zenodo.24151804"
     description: Zenodo concept DOI (all versions)
   - type: doi
+    value: "10.5281/zenodo.24151805"
+    description: Zenodo archive of TEBench v1.0.0
+  - type: doi
     value: "10.26434/chemrxiv.15011944"
     description: ChemRxiv preprint
-abstract: "v1.0.0 (12 November 2026). DFT and experimental tables are separate. Includes canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curves and points are not redistributed. A ChemRxiv preprint is available (DOI 10.26434/chemrxiv.15011944)."
+abstract: "v1.0.1 (12 November 2026). DFT and experimental tables are separate. Includes the sample-level Starrydata harmonised table, Starrydata prediction files, canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curve and point dumps are not redistributed. A ChemRxiv preprint is available (DOI 10.26434/chemrxiv.15011944)."
 preferred-citation:
   type: article
   authors:
     - family-names: Rapaka
       given-names: Subash Chandra Bose
       orcid: "https://orcid.org/0000-0002-6499-8741"
+      affiliation: "Centre for Materials for Electronics Technology (C-MET), Ministry of Electronics and Information Technology (MeitY), Thrissur, Kerala 680581, India"
+      email: "rscbose.21@cmet.gov.in"
   title: "TEBench: a source-labelled thermoelectric data collection with leakage-safe splits and baselines for machine learning"
   year: 2026
   month: 11

@@ -1,0 +1,40 @@
+{
+  "title": "TEBench: a source-labelled thermoelectric data collection with leakage-safe splits and baselines for machine learning",
+  "version": "1.0.1",
+  "upload_type": "dataset",
+  "description": "<p>v1.0.1 of TEBench, corresponding to the ChemRxiv preprint (DOI 10.26434/chemrxiv.15011944). The manuscript has been submitted to ACS Journal of Chemical Information and Modeling and has not been accepted. v1.0.0 is archived as DOI 10.5281/zenodo.24151805.</p><p>Three source-labelled thermoelectric tables are kept separate: Starrydata Experiment-labelled curves, a JARVIS-DFT transport extract, and an audited bulk Bi2Te3 workbook. DFT and experimental targets are never pooled. This version includes the sample-level Starrydata harmonised table, Starrydata baseline and revision prediction files, canonical-composition keys, proposed leakage-safe paper/family/formula splits (seed 20261107), an eight-paper own-data hold-out, \u03ba-only physical screening, and CPU reference and tuned baselines.</p><p>Code is released under the MIT License. Bundled data have mixed upstream licences; see NOTICE.md. Starrydata-derived files are redistributed under CC BY 4.0 with attribution to Katsura et al., STAM: Methods 5, 2506976 (2025) and to the original source-paper DOIs, and with an indication of the harmonisation, flags and predictions added here. Raw official ThermoelectricMaterials papers, samples and curves files, and intermediate long/point dumps, are not redistributed; rebuild them from the pinned snapshot (SHA-256 hashes in metrics/download_provenance.json).</p>",
+  "creators": [
+    {
+      "name": "Rapaka, Subash Chandra Bose",
+      "affiliation": "Centre for Materials for Electronics Technology (C-MET), Ministry of Electronics and Information Technology (MeitY), Thrissur, Kerala 680581, India",
+      "orcid": "0000-0002-6499-8741"
+    }
+  ],
+  "keywords": [
+    "thermoelectric materials",
+    "machine learning",
+    "benchmark",
+    "data leakage",
+    "grouped cross-validation",
+    "Starrydata",
+    "JARVIS-DFT",
+    "Bi2Te3",
+    "data provenance"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/rscbose21/TEBench",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.26434/chemrxiv.15011944",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    }
+  ]
+}
