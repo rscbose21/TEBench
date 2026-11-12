@@ -17,8 +17,8 @@ been accepted. A Zenodo DOI will be minted from this GitHub release; no archival
 - Original RF scores retained alongside revised RF and validation-selected CPU
   histogram gradient boosting, including structure-derived JARVIS tabular features.
 - Extract provenance and unresolved transport-unit/version metadata are explicit.
-- Prediction files for the Starrydata experiment baselines and revision are included
-  in `metrics/`. The reference files `notes/revision_20261107/reference_metrics.csv`
+- Prediction files for JARVIS and Bi2Te3 are in `metrics/`; Starrydata prediction files
+  contain measured target values and are not redistributed (rebuild them with the scripts). The reference files `notes/revision_20261107/reference_metrics.csv`
   and `notes/revision_20261107/reference_jarvis_splits.csv.gz` are included so the
   original RF rows can be reproduced.
 
