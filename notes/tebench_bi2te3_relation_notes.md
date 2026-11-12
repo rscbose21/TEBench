@@ -1,4 +1,4 @@
-# Audited Bi2Te3 subset and Starrydata family: local staging notes
+# Audited Bi2Te3 subset and Starrydata family notes
 
 The supplied workbook has 740 audited records. It is one labelled subset, not
 TEBench as a whole, and is associated with the already-published sole-author
@@ -29,8 +29,8 @@ temperatures or directions; those require source-paper review before deduplicati
 Starrydata has metadata labels rather than the supplied workbook's physics audit.
 Its values never replace or average with audited values. JARVIS stays DFT-only.
 
-Starrydata: local research staging only; no external sharing/upload. Official
-free-use statement / NIMS CC BY 4.0 listing and snapshot details are in README.
+Starrydata: official free-use statement / NIMS CC BY 4.0 listing and snapshot
+details are in README. Raw Starrydata curve and point files are not redistributed.
 Cite Katsura et al., STAM Methods (2025), DOI 10.1080/27660400.2025.2506976,
 and the original source-paper DOIs as appropriate.
 
