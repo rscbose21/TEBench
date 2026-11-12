@@ -7,7 +7,23 @@ authors:
     given-names: Subash Chandra Bose
     orcid: "https://orcid.org/0000-0002-6499-8741"
 version: 1.0.0
-date-released: 2026-11-07
+date-released: 2026-11-12
 repository-code: "https://github.com/rscbose21/TEBench"
 url: "https://github.com/rscbose21/TEBench"
-abstract: "v1.0.0 release candidate (7 November 2026). DFT and experimental tables are separate. Includes canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curves and points are not redistributed. No archival DOI has been minted."
+identifiers:
+  - type: doi
+    value: "10.26434/chemrxiv.15011944"
+    description: ChemRxiv preprint
+abstract: "v1.0.0 (12 November 2026). DFT and experimental tables are separate. Includes canonical-composition keys, proposed leakage-safe splits, own-paper exclusions and CPU reference and tuned baselines. Raw Starrydata curves and points are not redistributed. A ChemRxiv preprint is available (DOI 10.26434/chemrxiv.15011944)."
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Rapaka
+      given-names: Subash Chandra Bose
+      orcid: "https://orcid.org/0000-0002-6499-8741"
+  title: "TEBench: a source-labelled thermoelectric data collection with leakage-safe splits and baselines for machine learning"
+  year: 2026
+  month: 11
+  journal: ChemRxiv
+  doi: "10.26434/chemrxiv.15011944"
+  url: "https://doi.org/10.26434/chemrxiv.15011944"

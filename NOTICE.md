@@ -14,7 +14,7 @@ only under its own terms, and cite the papers below.
 ## JARVIS DFT extract
 - File: `data/tebench_jarvis_dft.csv.gz`
 - Cite: K. Choudhary, K. F. Garrity and F. Tavazza, J. Phys.: Condens. Matter 32, 475501 (2020), DOI: 10.1088/1361-648X/aba06b
-- Also cite the JARVIS-DFT database paper: K. Choudhary et al., npj Computational Materials 6, 173 (2020) if that is the database source used in your work. Confirm the exact JARVIS extract version before publication. Upstream release identity for the local extract is unresolved; see `notes/revision_20261107/JARVIS_PROVENANCE.md`.
+- Also cite the JARVIS-DFT database paper: K. Choudhary et al., npj Computational Materials 6, 173 (2020) if that is the database source used in your work. The local extract SHA-256 hash is recorded in `notes/revision_20261107/JARVIS_PROVENANCE.md`; the upstream release identifier is not pinned.
 
 ## Starrydata experimental curves
 This repository does **not** redistribute raw Starrydata curve or point dumps.
