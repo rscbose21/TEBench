@@ -1,5 +1,7 @@
 # TEBench — source-labelled thermoelectric data collection, proposed splits and CPU baselines
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24151805.svg)](https://doi.org/10.5281/zenodo.24151805)
+
 TEBench keeps three thermoelectric sources as separate source- and domain-labelled tables: Starrydata
 Experiment-labelled curves (ThermoelectricMaterials project), a JARVIS-DFT transport extract and an audited bulk
 Bi2Te3 workbook. It provides proposed leakage-safe split keys (paper-, family- and formula-grouped, plus an
@@ -37,8 +39,9 @@ The manuscript has been submitted to ACS *Journal of Chemical Information and Mo
   `notes/revision_20261107/experimental_jarvis_structure_candidates.csv`. They are composition candidates, not
   unique structure matches.
 - **Release.** `CITATION.cff` and `RELEASE_NOTES.md` describe v1.0.0 (12 November 2026). The ChemRxiv preprint
-  is DOI 10.26434/chemrxiv.15011944. No tagged GitHub release or archival (Zenodo) DOI exists yet; a Zenodo DOI
-  will be minted from the v1.0.0 GitHub release.
+  is DOI 10.26434/chemrxiv.15011944. The v1.0.0 GitHub release is archived on Zenodo:
+  DOI [10.5281/zenodo.24151805](https://doi.org/10.5281/zenodo.24151805) (this version; all versions:
+  [10.5281/zenodo.24151804](https://doi.org/10.5281/zenodo.24151804)).
 
 The first-pass staging notes further down are kept for provenance. Where they describe whitespace-stripped
 string matching, string-grouped JARVIS splits, the unscreened κ baseline or "no tuning", the revision above

@@ -10,7 +10,14 @@ version: 1.0.0
 date-released: 2026-11-12
 repository-code: "https://github.com/rscbose21/TEBench"
 url: "https://github.com/rscbose21/TEBench"
+doi: "10.5281/zenodo.24151805"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24151805"
+    description: Zenodo archive of TEBench v1.0.0
+  - type: doi
+    value: "10.5281/zenodo.24151804"
+    description: Zenodo concept DOI (all versions)
   - type: doi
     value: "10.26434/chemrxiv.15011944"
     description: ChemRxiv preprint

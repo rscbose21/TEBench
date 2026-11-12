@@ -6,7 +6,8 @@ This is the first versioned public snapshot of TEBench, corresponding to the Che
 S. C. B. Rapaka, *TEBench: a source-labelled thermoelectric data collection with leakage-safe splits
 and baselines for machine learning*, ChemRxiv (2026), https://doi.org/10.26434/chemrxiv.15011944.
 The manuscript has been submitted to ACS Journal of Chemical Information and Modeling and has not
-been accepted. A Zenodo DOI will be minted from this GitHub release; no archival DOI is asserted here.
+been accepted. This release is archived on Zenodo as DOI 10.5281/zenodo.24151805
+(all versions: 10.5281/zenodo.24151804).
 
 - Sources remain separate: Starrydata Experiment-labelled data, JARVIS DFT,
   and the audited bulk Bi2Te3 workbook; never pool DFT and experiment.
